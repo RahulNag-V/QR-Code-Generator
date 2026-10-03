@@ -8,15 +8,15 @@
 
   // SVG Preset Logos (Clean vector Data URIs styled with Burgundy tones)
   const PRESET_ICONS = {
-    globe: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23750923" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
-    link: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23750923" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
-    github: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232B131F"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
+    globe: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    link: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    github: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23181416"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
     google: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.03h3.88c2.28-2.1 3.665-5.18 3.665-9.12z"/><path fill="%2334A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.03c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.13C3.25 21.37 7.34 24 12 24z"/><path fill="%23FBBC05" d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.58H1.26A11.956 11.956 0 0 0 0 12c0 1.92.46 3.74 1.26 5.42l4.02-3.13z"/><path fill="%23EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.25 2.63 1.26 6.58l4.02 3.13c.95-2.83 3.6-4.96 6.72-4.96z"/></svg>`,
-    youtube: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23A92737"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
-    twitter: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232B131F"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
-    instagram: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23750923"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
-    whatsapp: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23750923"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.476-.15-.677.151-.2.301-.777.979-.953 1.18-.175.201-.351.226-.652.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.175-.301-.019-.464.131-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.527-.075-.151-.677-1.632-.928-2.235-.245-.588-.494-.509-.677-.518-.175-.009-.377-.01-.578-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.201 2.123 3.242 5.143 4.547.719.31 1.28.496 1.718.636.722.23 1.378.198 1.9.12.58-.088 1.78-.727 2.03-1.43.25-.704.25-1.307.175-1.431-.075-.125-.276-.201-.577-.352zm-5.467 7.618a9.96 9.96 0 0 1-5.088-1.391l-.365-.216-3.781.991 1.008-3.687-.237-.377a9.96 9.96 0 1 1 18.423-5.297c0 5.511-4.479 9.977-10 9.977z"/></svg>`,
-    wifi: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23750923" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>`
+    youtube: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
+    twitter: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23181416"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    instagram: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
+    whatsapp: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.476-.15-.677.151-.2.301-.777.979-.953 1.18-.175.201-.351.226-.652.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.175-.301-.019-.464.131-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.527-.075-.151-.677-1.632-.928-2.235-.245-.588-.494-.509-.677-.518-.175-.009-.377-.01-.578-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.201 2.123 3.242 5.143 4.547.719.31 1.28.496 1.718.636.722.23 1.378.198 1.9.12.58-.088 1.78-.727 2.03-1.43.25-.704.25-1.307.175-1.431-.075-.125-.276-.201-.577-.352zm-5.467 7.618a9.96 9.96 0 0 1-5.088-1.391l-.365-.216-3.781.991 1.008-3.687-.237-.377a9.96 9.96 0 1 1 18.423-5.297c0 5.511-4.479 9.977-10 9.977z"/></svg>`,
+    wifi: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>`
   };
 
   // State Management with Burgundy Elegance defaults
@@ -28,22 +28,23 @@
     margin: 10,
     dotType: 'rounded',
     colorType: 'gradient',
-    dotColor1: '#750923', // Primary Burgundy
-    dotColor2: '#2B131F', // Dark Burgundy
+    dotColor1: '#6D1F3A', // Primary Burgundy
+    dotColor2: '#481328', // Dark Burgundy
     gradientType: 'linear',
     gradientRotation: 45,
     bgColor: '#ffffff',
     bgTransparent: false,
     cornerSquareType: 'extra-rounded',
-    cornerSquareColor: '#750923',
+    cornerSquareColor: '#6D1F3A',
     cornerDotType: 'dot',
-    cornerDotColor: '#750923',
+    cornerDotColor: '#6D1F3A',
     customCornerColors: true,
     logo: null,
     logoSize: 0.35,
     logoMargin: 3,
     hideBgDots: true,
     errorCorrectionLevel: 'H',
+    selectedExportFormat: 'png',
     history: JSON.parse(localStorage.getItem('omni_history') || '[]')
   };
 
@@ -1505,14 +1506,347 @@
     }, { passive: true });
   }
 
-  // Initialize Application
+  // ===================================================================
+  //  CLIENT-SIDE ROUTER
+  // ===================================================================
+  function initRouter() {
+    const viewHome = document.getElementById('viewHome');
+    const viewGenerator = document.getElementById('viewGenerator');
+    const navLinks = document.querySelectorAll('.nav-link-btn, .mobile-nav-link, [data-nav]');
+
+    function activateView(path) {
+      const isGenerator = path.includes('/generator') || path.includes('generator');
+      
+      if (viewHome) {
+        viewHome.classList.toggle('active', !isGenerator);
+        viewHome.style.display = isGenerator ? 'none' : 'block';
+        viewHome.style.opacity = isGenerator ? '0' : '1';
+      }
+      if (viewGenerator) {
+        viewGenerator.classList.toggle('active', isGenerator);
+        viewGenerator.style.display = isGenerator ? 'block' : 'none';
+        viewGenerator.style.opacity = isGenerator ? '1' : '0';
+      }
+
+      // Update active nav links
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const nav = link.getAttribute('data-nav') || '';
+        if (isGenerator) {
+          link.classList.toggle('active', href.includes('/generator') || nav === 'generator');
+        } else {
+          link.classList.toggle('active', href === '#/' || href === '' || nav === 'home');
+        }
+      });
+
+      // Update mobile drawer state
+      const navLinkHome = document.getElementById('navLinkHome');
+      const navLinkGenerator = document.getElementById('navLinkGenerator');
+      if (navLinkHome) navLinkHome.classList.toggle('active', !isGenerator);
+      if (navLinkGenerator) navLinkGenerator.classList.toggle('active', isGenerator);
+
+      // If switching to generator, init QR code if not yet done
+      if (isGenerator && !qrCode) {
+        setTimeout(() => {
+          initQRCode();
+          renderHistory();
+        }, 50);
+      }
+
+      // Launch specific type if URL has ?type=xxx
+      if (isGenerator) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const launchType = urlParams.get('type');
+        if (launchType) {
+          const typeBtn = document.querySelector(`.type-nav-btn[data-type="${launchType}"]`);
+          if (typeBtn) typeBtn.click();
+        }
+      }
+    }
+
+    function handleNavigation(e) {
+      const anchor = e.target.closest('a[href]');
+      if (!anchor) return;
+      
+      const href = anchor.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto')) return;
+      if (href.startsWith('#about') || href.startsWith('#templates') || href.startsWith('#features')) return;
+
+      if (href.startsWith('#/') || href === '#') {
+        e.preventDefault();
+        const path = href.replace('#', '');
+        window.location.hash = '#' + path;
+        activateView(path);
+        closeMobileDrawer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('click', handleNavigation);
+    window.addEventListener('hashchange', () => {
+      activateView(window.location.hash);
+    });
+
+    // Initial load routing
+    const currentHash = window.location.hash || '#/';
+    activateView(currentHash);
+  }
+
+  // ===================================================================
+  //  ACCORDION SYSTEM (Progressive Disclosure)
+  // ===================================================================
+  function initAccordions() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const trigger = item.querySelector('.accordion-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // Close all others (optional: only if you want one at a time)
+        // accordionItems.forEach(i => i.classList.remove('open'));
+        item.classList.toggle('open', !isOpen);
+        trigger.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  }
+
+  // ===================================================================
+  //  SCAN QUALITY CALCULATOR
+  // ===================================================================
+  function calculateScanQuality() {
+    // Parse hex to RGB
+    function hexToRgb(hex) {
+      const clean = hex.replace('#', '');
+      return {
+        r: parseInt(clean.substring(0, 2), 16),
+        g: parseInt(clean.substring(2, 4), 16),
+        b: parseInt(clean.substring(4, 6), 16)
+      };
+    }
+    // Relative luminance (WCAG)
+    function luminance(rgb) {
+      const r = rgb.r / 255, g = rgb.g / 255, b = rgb.b / 255;
+      const toLinear = c => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+      return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);
+    }
+    function contrastRatio(lum1, lum2) {
+      const light = Math.max(lum1, lum2), dark = Math.min(lum1, lum2);
+      return (light + 0.05) / (dark + 0.05);
+    }
+
+    const dotColor = state.dotColor1 || '#000000';
+    const bgColor = state.bgTransparent ? '#FFFFFF' : (state.bgColor || '#FFFFFF');
+
+    let dotLum, bgLum;
+    try {
+      dotLum = luminance(hexToRgb(dotColor));
+      bgLum = luminance(hexToRgb(bgColor));
+    } catch(e) {
+      return 'excellent';
+    }
+
+    const contrast = contrastRatio(dotLum, bgLum);
+    const logoSize = state.logoSize || 0;
+    const ecLevel = state.errorCorrectionLevel || 'H';
+    
+    // EC weights: H=1, Q=0.85, M=0.7, L=0.5
+    const ecWeight = { H: 1, Q: 0.85, M: 0.7, L: 0.5 }[ecLevel] || 1;
+    
+    // Logo penalty: logo > 35% with non-H EC hurts quality
+    const logoPenalty = logoSize > 0.35 && ecLevel !== 'H' ? 0.8 : 1;
+
+    const score = contrast * ecWeight * logoPenalty;
+
+    if (score >= 6 && contrast >= 5.5) return 'excellent';
+    if (score >= 3.5 && contrast >= 3) return 'good';
+    return 'warning';
+  }
+
+  function updateScanQuality() {
+    const pill = document.getElementById('scanQualityPill');
+    const rating = document.getElementById('scanQualityRating');
+    const feedback = document.getElementById('scanQualityFeedback');
+    if (!pill || !rating) return;
+
+    const quality = calculateScanQuality();
+
+    pill.className = `scan-quality-pill quality-${quality}`;
+    
+    const labels = {
+      excellent: 'Excellent',
+      good: 'Good',
+      warning: 'Needs Attention'
+    };
+    const feedbackTexts = {
+      excellent: 'High contrast, optimal error correction, clean scan profile.',
+      good: 'Good scanability. Consider increasing contrast for best results.',
+      warning: 'Low contrast or large logo. Increase error correction to H for logos.'
+    };
+
+    rating.textContent = labels[quality] || 'Excellent';
+    if (feedback) feedback.textContent = feedbackTexts[quality] || '';
+  }
+
+  // ===================================================================
+  //  FORMAT SELECTOR (PNG/SVG/JPG Pills)
+  // ===================================================================
+  function initFormatSelector() {
+    const formatBtns = document.querySelectorAll('.format-pill-btn');
+    const downloadBtn = document.getElementById('downloadPngBtn');
+    const downloadBtnText = document.getElementById('mainDownloadBtnText');
+
+    formatBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.selectedExportFormat = btn.getAttribute('data-format') || 'png';
+        
+        if (downloadBtnText) {
+          const formatLabels = { png: 'Download QR Code (PNG)', svg: 'Download QR Code (SVG)', jpeg: 'Download QR Code (JPG)' };
+          downloadBtnText.textContent = formatLabels[state.selectedExportFormat] || 'Download QR Code';
+        }
+      });
+    });
+
+    // Override download PNG button to use selected format
+    if (downloadBtn) {
+      downloadBtn.removeEventListener('click', () => downloadQR('png'));
+      downloadBtn.addEventListener('click', () => {
+        downloadQR(state.selectedExportFormat === 'svg' ? 'svg' : state.selectedExportFormat === 'jpeg' ? 'jpeg' : 'png');
+      });
+    }
+  }
+
+  // ===================================================================
+  //  MOBILE HEADER MENU DRAWER
+  // ===================================================================
+  function initMobileMenu() {
+    const toggleBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    if (!toggleBtn || !drawer) return;
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.contains('open');
+      drawer.classList.toggle('open', !isOpen);
+      drawer.setAttribute('aria-hidden', isOpen);
+      toggleBtn.setAttribute('aria-expanded', !isOpen);
+    });
+  }
+
+  function closeMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (drawer) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    const toggleBtn = document.getElementById('mobileMenuBtn');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  // ===================================================================
+  //  HOME PAGE — TYPE CARD LAUNCH HANDLER
+  // ===================================================================
+  function initHomeTypeLaunch() {
+    document.querySelectorAll('.type-showcase-card[data-launch-type]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const launchType = card.getAttribute('data-launch-type');
+        // Navigate to generator
+        window.location.hash = '#/generator';
+        // Slight delay so generator view can mount
+        setTimeout(() => {
+          const typeBtn = document.querySelector(`.type-nav-btn[data-type="${launchType}"]`);
+          if (typeBtn) typeBtn.click();
+        }, 80);
+      });
+    });
+
+    // Hero and CTA buttons that route to generator
+    document.querySelectorAll('#heroCreateBtn, #navCtaBtn, #finalCtaBtn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.hash = '#/generator';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  // ===================================================================
+  //  PATCH: updateReadout to also update payload-readout-row
+  // ===================================================================
+  const _originalUpdateReadout = updateReadout;
+
+  function updateReadoutWithPayloadRow() {
+    const rawVal = (state.url || '').trim();
+    
+    // Update the new payload readout row in the preview card
+    const readoutEl = document.getElementById('qrUrlReadout');
+    if (readoutEl) {
+      let displayVal = rawVal;
+      if (!rawVal) {
+        displayVal = 'No content specified';
+      } else if (rawVal.length > 55) {
+        displayVal = rawVal.substring(0, 52) + '...';
+      }
+      readoutEl.textContent = displayVal;
+    }
+
+    const testLink = document.getElementById('testScannerLink');
+    if (testLink) {
+      if (rawVal && (rawVal.startsWith('http://') || rawVal.startsWith('https://'))) {
+        testLink.href = rawVal;
+        testLink.style.display = 'inline';
+      } else {
+        testLink.href = '#';
+        testLink.style.display = 'none';
+      }
+    }
+
+    // Update scan quality after any readout change
+    updateScanQuality();
+  }
+
+  // ===================================================================
+  //  OVERRIDE refreshQRCode to update scan quality too
+  // ===================================================================
+  const _baseRefreshQRCode = refreshQRCode;
+
+  // ===================================================================
+  //  Initialize Application
+  // ===================================================================
   function init() {
     setupEventListeners();
-    initQRCode();
-    renderHistory();
-    initSpotlightCursor();
-    el.urlInput.value = state.url;
-    updateReadout();
+    initRouter();
+    initAccordions();
+    initMobileMenu();
+    initHomeTypeLaunch();
+    initFormatSelector();
+    
+    // Initialize QR only when on generator page
+    const isGeneratorPage = window.location.hash.includes('/generator');
+    if (isGeneratorPage) {
+      initQRCode();
+      renderHistory();
+    }
+    
+    if (el.urlInput) el.urlInput.value = state.url;
+    
+    // Patch updateReadout to also drive scan quality and payload row
+    const origRefresh = refreshQRCode;
+    // Hook into refresh to run scan quality update
+    const originalUpdateReadout = updateReadout;
+    
+    // Override updateReadout to additionally update quality pill and payload row
+    window.__omni_patchReadout = function() {
+      updateReadoutWithPayloadRow();
+    };
+
+    // Watch for any QR refresh
+    setInterval(() => {
+      updateScanQuality();
+    }, 800);
   }
 
   if (document.readyState === 'loading') {
