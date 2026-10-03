@@ -57,7 +57,7 @@ A sophisticated, minimal, and high-performance URL to QR Code generator styled i
 ```bash
 python -m http.server 8085
 ```
-Open **[http://localhost:8085](http://localhost:8085)** in your browser.
+Open **[https://omniqr-studio.web.app/](https://omniqr-studio.web.app/)** in your browser.
 
 ### Direct File Open
 Double-click [index.html](file:///c:/Users/rahul/Downloads/qrcode%20generator/index.html) in your file explorer.
