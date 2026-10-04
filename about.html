@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Rahul Nag V &bull; OmniQR Studio</title>
+  <meta name="description" content="The story, motivation, and AI-assisted engineering behind OmniQR Studio — designed and built by Rahul Nag V.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237A1736'><rect width='24' height='24' rx='6'/><path d='M7 7h4v4H7V7zm6 0h4v4h-4V7zm-6 6h4v4H7v-4zm8 2h2v2h-2v-2z' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient Background Canvas Layers -->
+  <div class="ambient-canvas-layer" aria-hidden="true"></div>
+  <div class="cursor-spotlight-layer" id="cursorSpotlight" aria-hidden="true"></div>
+
+  <!-- Floating Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-anchor" aria-label="OmniQR Studio Home">
+        <div class="brand-glyph-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">OMNIQR</span>
+          <span class="brand-badge-version">Studio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link-btn" id="navLinkHome">Home</a>
+        <a href="index.html#/generator" class="nav-link-btn" id="navLinkGenerator">QR Generator</a>
+        <a href="index.html#templates" class="nav-link-btn" id="navLinkTemplates">Templates</a>
+        <a href="about.html" class="nav-link-btn active" id="navLinkAbout">About</a>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-action-group">
+        <a href="https://github.com/RahulNag-V/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="btn-github-link" title="View Source on GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="index.html#/generator" class="btn-nav-primary" id="navCtaBtn">
+          <span>Create QR</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <a href="index.html" class="mobile-nav-link">
+      <span>Home</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+    <a href="index.html#/generator" class="mobile-nav-link">
+      <span>QR Generator</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+    <a href="index.html#templates" class="mobile-nav-link">
+      <span>Templates</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+    <a href="about.html" class="mobile-nav-link active">
+      <span>About</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+    <a href="https://github.com/RahulNag-V/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+      <span>GitHub Repository</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    </a>
+  </div>
+
+  <!-- ===================================================================
+       ABOUT PAGE WRAPPER
+       =================================================================== -->
+  <main class="about-container">
+
+    <!-- 1. Hero Section -->
+    <section class="about-hero scroll-reveal">
+      <div class="about-hero-header">
+        <div class="about-badge-pill">
+          <span class="status-dot-pulse"></span>
+          <span>Made with AI &bull; Guided by a Developer</span>
+        </div>
+        <h1 class="about-hero-title">
+          Built with curiosity.<br>
+          Powered by AI.<br>
+          <span class="about-title-accent">Designed by a developer.</span>
+        </h1>
+        <p class="about-hero-sub">
+          The story, methodology, and AI-assisted engineering behind OmniQR Studio — born from a real-world frustration with expiring QR trial paywalls.
+        </p>
+        <div class="about-hero-meta-row">
+          <div class="about-meta-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Rahul Nag V</span>
+          </div>
+          <div class="about-meta-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>~1.5h Idea to Deployment</span>
+          </div>
+          <div class="about-meta-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% Free Forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Developer Profile & Focus Areas -->
+    <section class="about-profile-section scroll-reveal">
+      <div class="about-profile-card">
+        <div class="profile-card-left">
+          <div class="profile-avatar-row">
+            <div class="profile-avatar-box">
+              <span class="profile-initials">RN</span>
+            </div>
+            <div class="profile-title-block">
+              <h2 class="profile-name">Rahul Nag V</h2>
+              <span class="profile-role">Computer Science Engineering Student &amp; Developer</span>
+            </div>
+          </div>
+          <p class="profile-bio">
+            “Hi, I’m Rahul Nag V, a Computer Science Engineering student who enjoys building practical web applications, experimenting with AI-powered development, and exploring modern UI/UX.”
+          </p>
+        </div>
+        <div class="profile-card-right">
+          <span class="profile-interests-label">Interests &amp; Focus Areas</span>
+          <div class="interests-grid">
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              Artificial Intelligence
+            </span>
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Web Development
+            </span>
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              UI/UX Design
+            </span>
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Software Engineering
+            </span>
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Modern Developer Tools
+            </span>
+            <span class="interest-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              Building Practical Products
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Why OmniQR? (Behind the Story) -->
+    <section class="about-story-section scroll-reveal">
+      <div class="about-section-header">
+        <span class="section-label-tag">Behind The Story</span>
+        <h2 class="section-main-heading">Why I Built OmniQR</h2>
+        <p class="section-main-subtext">The story of turning a frustrating 7-day expiration paywall into an independent open studio.</p>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-quote-card">
+          <div class="story-quote-mark">“</div>
+          <p class="story-quote-text">
+            I was creating a QR code for one of my projects and came across a QR platform that offered a free trial for 7 days. After the trial period, the generated QR code could become inactive unless the user continued with a paid plan.
+          </p>
+          <p class="story-quote-text highlight-thought">
+            That made me think — instead of depending on another platform for something this simple, why not build my own?
+          </p>
+          <p class="story-quote-text">
+            That small thought became OmniQR Studio.
+          </p>
+          <div class="story-quote-author">
+            <span class="quote-author-name">Rahul Nag V</span>
+            <span class="quote-author-note">Creator &amp; Developer</span>
+          </div>
+        </div>
+
+        <div class="story-evolution-card">
+          <h3 class="story-evolution-title">Simplicity Without Complexity</h3>
+          <p class="story-evolution-p">
+            The goal was to create a simple, customizable QR platform where anyone can generate, personalize, and export QR codes without subscription traps or expiring links.
+          </p>
+          <p class="story-evolution-p">
+            What started as a focused project evolved into a comprehensive web suite equipped with:
+          </p>
+          <ul class="evolution-features-list">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Multiple QR generation types (Website, Text, Wi-Fi, Contact, Media)</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom colors, linear gradients, and background controls</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> QR pattern and eye geometry customization</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logo and brand shield embedding with auto quiet margins</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Real-time live preview with dynamic scan quality rating</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Lossless SVG and 4K PNG exports</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Responsive design with polished modern UI/UX</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Built in the AI Era & Development Lifecycle -->
+    <section class="about-ai-era-section scroll-reveal">
+      <div class="about-section-header">
+        <span class="section-label-tag">AI-Powered Engineering</span>
+        <h2 class="section-main-heading">Built in the AI Era</h2>
+        <p class="section-main-subtext">A transparent breakdown of how modern AI accelerates development under human architectural guidance.</p>
+      </div>
+
+      <div class="ai-philosophy-banner">
+        <div class="philosophy-content">
+          <h3 class="philosophy-title">Human-Guided, AI-Accelerated</h3>
+          <p class="philosophy-desc">
+            AI was used throughout the development process — from brainstorming and planning to UI exploration, coding, debugging, optimization, documentation, and deployment.
+          </p>
+          <div class="philosophy-quote-box">
+            “AI generated ideas, suggestions, and code, but the product direction, feature decisions, design choices, testing, debugging, and final implementation were guided and reviewed by me.”
+          </div>
+        </div>
+        <div class="philosophy-stat-box">
+          <span class="stat-highlight-number">~1.5 Hours</span>
+          <span class="stat-highlight-label">Idea to Deployment</span>
+          <span class="stat-highlight-sub">From concept to production release</span>
+        </div>
+      </div>
+
+      <!-- Workflow Lifecycle Steps -->
+      <div class="timeline-container">
+        <span class="timeline-section-title">Development Workflow &amp; Iteration Lifecycle</span>
+        <div class="timeline-steps-track">
+          <div class="timeline-step-card">
+            <span class="timeline-num">01</span>
+            <h4 class="timeline-title">IDEA</h4>
+            <p class="timeline-desc">Recognizing the expiring QR paywall dilemma and conceptualizing an independent, client-side open studio.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card">
+            <span class="timeline-num">02</span>
+            <h4 class="timeline-title">AI RESEARCH &amp; BRAINSTORMING</h4>
+            <p class="timeline-desc">Evaluating vector graphics standards, QR canvas libraries, error recovery algorithms, and architectural models.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card">
+            <span class="timeline-num">03</span>
+            <h4 class="timeline-title">UI/UX EXPLORATION</h4>
+            <p class="timeline-desc">Curating burgundy &amp; wine color palettes, designing 2-column studio layouts, and crafting floating navigation elements.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card">
+            <span class="timeline-num">04</span>
+            <h4 class="timeline-title">AI-ASSISTED DEVELOPMENT</h4>
+            <p class="timeline-desc">Synthesizing responsive components, state models, live scan diagnostics, and lossless export engines.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card">
+            <span class="timeline-num">05</span>
+            <h4 class="timeline-title">TESTING &amp; DEBUGGING</h4>
+            <p class="timeline-desc">Validating physical device camera focusing, contrast ratios, and automated browser verification tests.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card">
+            <span class="timeline-num">06</span>
+            <h4 class="timeline-title">REFINEMENT</h4>
+            <p class="timeline-desc">Polishing GPU cursor spotlight tracking, micro-interactions, scroll reveal animations, and typography.</p>
+          </div>
+          <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+          <div class="timeline-step-card timeline-step-card--highlight">
+            <span class="timeline-num">07</span>
+            <h4 class="timeline-title">DEPLOYMENT</h4>
+            <p class="timeline-desc">Automated build and continuous production deployment on Firebase Hosting with zero downtime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. AI Toolkit -->
+    <section class="about-tools-section scroll-reveal">
+      <div class="about-section-header">
+        <span class="section-label-tag">The Toolkit</span>
+        <h2 class="section-main-heading">AI Tools in the Workflow</h2>
+        <p class="section-main-subtext">Each tool was utilized for its specific strengths across the engineering lifecycle.</p>
+      </div>
+
+      <div class="ai-tools-grid">
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Core Engine</span>
+            <h3 class="ai-tool-name">Antigravity</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for AI-assisted development, implementation, debugging, and project iteration.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Architecture</span>
+            <h3 class="ai-tool-name">ChatGPT</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for brainstorming, architecture discussions, problem solving, documentation, and development assistance.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Reasoning</span>
+            <h3 class="ai-tool-name">Claude</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for reasoning, code analysis, development workflows, and refining implementation ideas.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Design &amp; UI</span>
+            <h3 class="ai-tool-name">21st.dev</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used as a source of modern UI components and interface inspiration.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Exploration</span>
+            <h3 class="ai-tool-name">Google Gemini</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for research, brainstorming, technical exploration, and alternative approaches.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Coding Assist</span>
+            <h3 class="ai-tool-name">GitHub Copilot</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for code suggestions and accelerating repetitive development tasks.
+          </p>
+        </div>
+
+        <div class="ai-tool-card">
+          <div class="ai-tool-header">
+            <span class="ai-tool-pill">Research</span>
+            <h3 class="ai-tool-name">Perplexity</h3>
+          </div>
+          <p class="ai-tool-desc">
+            Used for research and exploring technical concepts and current development approaches.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. What I Learned -->
+    <section class="about-learnings-section scroll-reveal">
+      <div class="about-section-header">
+        <span class="section-label-tag">Engineering Insights</span>
+        <h2 class="section-main-heading">What I Learned</h2>
+        <p class="section-main-subtext">Five core observations distilled from pairing closely with AI on a production web app.</p>
+      </div>
+
+      <div class="learnings-grid">
+        <div class="learning-item-card">
+          <span class="learning-badge">01</span>
+          <h4 class="learning-title">AI Dramatically Accelerates Velocity</h4>
+          <p class="learning-desc">Tasks that previously demanded hours of initial boilerplate setup can be bootstrapped in minutes, unlocking deeper focus on UX details.</p>
+        </div>
+        <div class="learning-item-card">
+          <span class="learning-badge">02</span>
+          <h4 class="learning-title">Good Prompts Require Clear Thinking</h4>
+          <p class="learning-desc">AI cannot solve an ambiguous problem. The clearer your architecture, data contracts, and constraints, the higher the quality of the result.</p>
+        </div>
+        <div class="learning-item-card">
+          <span class="learning-badge">03</span>
+          <h4 class="learning-title">Generated Code Needs Human Review</h4>
+          <p class="learning-desc">Models can miss subtle edge cases or state side-effects. Diligent developer review, unit checks, and manual testing remain indispensable.</p>
+        </div>
+        <div class="learning-item-card">
+          <span class="learning-badge">04</span>
+          <h4 class="learning-title">UI Quality Comes from Iteration</h4>
+          <p class="learning-desc">Refined software isn’t born from one prompt. It is crafted through deliberate cycles of spacing, color tokens, and micro-interactions.</p>
+        </div>
+        <div class="learning-item-card">
+          <span class="learning-badge">05</span>
+          <h4 class="learning-title">Fast Building Doesn’t Mean Skipping Testing</h4>
+          <p class="learning-desc">Velocity only matters if the product functions reliably. Scanning physical screens across real camera sensors validates true quality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Project Highlights -->
+    <section class="about-highlights-section scroll-reveal">
+      <div class="highlights-metrics-grid">
+        <div class="highlight-metric-card">
+          <span class="metric-big-val">~1.5 Hours</span>
+          <span class="metric-big-lbl">Idea to Deployment</span>
+          <span class="metric-big-sub">Fast, focused product execution</span>
+        </div>
+        <div class="highlight-metric-card">
+          <span class="metric-big-val">AI-Assisted</span>
+          <span class="metric-big-lbl">Human-Directed</span>
+          <span class="metric-big-sub">Reviewed &amp; guided at every phase</span>
+        </div>
+        <div class="highlight-metric-card">
+          <span class="metric-big-val">100% Free</span>
+          <span class="metric-big-lbl">No Expiration Limits</span>
+          <span class="metric-big-sub">No 7-day trials or hidden fees</span>
+        </div>
+        <div class="highlight-metric-card">
+          <span class="metric-big-val">Production Deployed</span>
+          <span class="metric-big-lbl">Firebase Hosting</span>
+          <span class="metric-big-sub">Live &amp; globally distributed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Developer Note -->
+    <section class="about-closing-section scroll-reveal">
+      <div class="about-closing-card">
+        <div class="developer-note-text">
+          “OmniQR Studio started with a simple problem and became an experiment in how far a developer can go by combining creativity, technical knowledge, and modern AI tools.”
+        </div>
+        <div class="closing-author-row">
+          <div class="closing-avatar">RN</div>
+          <div class="closing-author-info">
+            <span class="closing-author-name">Rahul Nag V</span>
+            <span class="closing-author-title">Computer Science Engineering Student &amp; Developer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Final CTA -->
+    <section class="about-cta-section scroll-reveal">
+      <div class="about-cta-card">
+        <span class="section-label-tag">Experience OmniQR Studio</span>
+        <h2 class="about-cta-title">Ready to create your custom QR code?</h2>
+        <p class="about-cta-subtext">Free forever for everyone — no expiration dates, no watermarks, and no sign-up needed.</p>
+        <div class="about-cta-buttons">
+          <a href="index.html#/generator" class="btn-hero-primary">
+            <span>Try OmniQR Studio →</span>
+          </a>
+          <a href="https://github.com/RahulNag-V/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner-grid">
+      <div class="footer-brand-side">
+        <span class="footer-brand-title">OMNIQR</span>
+        <span>QR creation, simplified.</span>
+      </div>
+
+      <ul class="footer-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#/generator">QR Generator</a></li>
+        <li><a href="index.html#templates">Templates</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://github.com/RahulNag-V" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+
+      <div class="footer-credits">
+        <span>Designed &amp; built by Rahul Nag V &bull; 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts for Interactions on About Page -->
+  <script>
+    // Header shadow on scroll
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 15) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
+      });
+    }
+
+    // Scroll reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Cursor spotlight & card hover illumination
+    if (!window.matchMedia('(hover: none) or (pointer: coarse)').matches) {
+      const spotlight = document.getElementById('cursorSpotlight');
+      let mouseX = -999, mouseY = -999, curX = -999, curY = -999, isMoving = false, rafId = null;
+
+      function renderSpotlight() {
+        curX += (mouseX - curX) * 0.22;
+        curY += (mouseY - curY) * 0.22;
+        spotlight.style.transform = `translate3d(${curX.toFixed(1)}px, ${curY.toFixed(1)}px, 0)`;
+        if (Math.abs(mouseX - curX) > 0.1 || Math.abs(mouseY - curY) > 0.1) {
+          rafId = requestAnimationFrame(renderSpotlight);
+        } else {
+          isMoving = false;
+        }
+      }
+
+      window.addEventListener('pointermove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!isMoving) {
+          isMoving = true;
+          spotlight.classList.add('active');
+          if (curX === -999) { curX = mouseX; curY = mouseY; }
+          renderSpotlight();
+        }
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        spotlight.classList.remove('active');
+        isMoving = false;
+        if (rafId) cancelAnimationFrame(rafId);
+      }, { passive: true });
+
+      // Card hover coordinates
+      const cards = document.querySelectorAll('.about-profile-card, .story-quote-card, .story-evolution-card, .ai-tool-card, .learning-item-card, .highlight-metric-card, .about-closing-card, .about-cta-card');
+      cards.forEach(card => {
+        card.addEventListener('pointermove', (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--card-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--card-y', `${e.clientY - rect.top}px`);
+        }, { passive: true });
+      });
+    }
+  </script>
+</body>
+</html>
