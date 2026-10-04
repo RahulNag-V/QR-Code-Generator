@@ -7,16 +7,16 @@
   'use strict';
 
   // SVG Preset Logos (Clean vector Data URIs styled with Burgundy tones)
+  // SVG Preset Logos (Clean vector Data URIs styled with Burgundy tones)
   const PRESET_ICONS = {
-    globe: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
-    link: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
-    github: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23181416"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
-    google: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.03h3.88c2.28-2.1 3.665-5.18 3.665-9.12z"/><path fill="%2334A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.03c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.13C3.25 21.37 7.34 24 12 24z"/><path fill="%23FBBC05" d="M5.28 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.58H1.26A11.956 11.956 0 0 0 0 12c0 1.92.46 3.74 1.26 5.42l4.02-3.13z"/><path fill="%23EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.25 2.63 1.26 6.58l4.02 3.13c.95-2.83 3.6-4.96 6.72-4.96z"/></svg>`,
-    youtube: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
-    twitter: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23181416"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
-    instagram: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
-    whatsapp: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236D1F3A"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.476-.15-.677.151-.2.301-.777.979-.953 1.18-.175.201-.351.226-.652.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.175-.301-.019-.464.131-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.527-.075-.151-.677-1.632-.928-2.235-.245-.588-.494-.509-.677-.518-.175-.009-.377-.01-.578-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.201 2.123 3.242 5.143 4.547.719.31 1.28.496 1.718.636.722.23 1.378.198 1.9.12.58-.088 1.78-.727 2.03-1.43.25-.704.25-1.307.175-1.431-.075-.125-.276-.201-.577-.352zm-5.467 7.618a9.96 9.96 0 0 1-5.088-1.391l-.365-.216-3.781.991 1.008-3.687-.237-.377a9.96 9.96 0 1 1 18.423-5.297c0 5.511-4.479 9.977-10 9.977z"/></svg>`,
-    wifi: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%236D1F3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>`
+    globe: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%237A1736" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    link: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%237A1736" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    github: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23171717"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
+    youtube: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237A1736"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
+    twitter: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23171717"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    instagram: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237A1736"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
+    whatsapp: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237A1736"><path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.101-.476-.15-.677.151-.2.301-.777.979-.953 1.18-.175.201-.351.226-.652.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.175-.301-.019-.464.131-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.527-.075-.151-.677-1.632-.928-2.235-.245-.588-.494-.509-.677-.518-.175-.009-.377-.01-.578-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.201 2.123 3.242 5.143 4.547.719.31 1.28.496 1.718.636.722.23 1.378.198 1.9.12.58-.088 1.78-.727 2.03-1.43.25-.704.25-1.307.175-1.431-.075-.125-.276-.201-.577-.352zm-5.467 7.618a9.96 9.96 0 0 1-5.088-1.391l-.365-.216-3.781.991 1.008-3.687-.237-.377a9.96 9.96 0 1 1 18.423-5.297c0 5.511-4.479 9.977-10 9.977z"/></svg>`,
+    wifi: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%237A1736" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>`
   };
 
   // State Management with Burgundy Elegance defaults
@@ -28,16 +28,16 @@
     margin: 10,
     dotType: 'rounded',
     colorType: 'gradient',
-    dotColor1: '#6D1F3A', // Primary Burgundy
-    dotColor2: '#481328', // Dark Burgundy
+    dotColor1: '#7A1736', // Primary Burgundy
+    dotColor2: '#541126', // Deep Burgundy
     gradientType: 'linear',
     gradientRotation: 45,
     bgColor: '#ffffff',
     bgTransparent: false,
     cornerSquareType: 'extra-rounded',
-    cornerSquareColor: '#6D1F3A',
+    cornerSquareColor: '#7A1736',
     cornerDotType: 'dot',
-    cornerDotColor: '#6D1F3A',
+    cornerDotColor: '#7A1736',
     customCornerColors: true,
     logo: null,
     logoSize: 0.35,
@@ -1456,8 +1456,11 @@
     showToast('Logo removed', 'info');
   }
 
-  // Interactive Burgundy Spotlight Cursor Effect
+  // ===================================================================
+  //  INTERACTIVE BURGUNDY SPOTLIGHT CURSOR EFFECT (Desktop Only)
+  // ===================================================================
   function initSpotlightCursor() {
+    if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
     const spotlight = document.getElementById('cursorSpotlight');
     if (!spotlight) return;
 
@@ -1472,26 +1475,24 @@
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      document.documentElement.style.setProperty('--cursor-x', `${mouseX}px`);
-      document.documentElement.style.setProperty('--cursor-y', `${mouseY}px`);
-
       if (!isMoving) {
         isMoving = true;
         spotlight.classList.add('active');
-        currentX = mouseX;
-        currentY = mouseY;
+        if (currentX === -999) {
+          currentX = mouseX;
+          currentY = mouseY;
+        }
         renderSpotlight();
       }
     }
 
     function renderSpotlight() {
-      // Smooth lerp (linear interpolation) for organic trailing aura
-      currentX += (mouseX - currentX) * 0.16;
-      currentY += (mouseY - currentY) * 0.16;
+      currentX += (mouseX - currentX) * 0.22;
+      currentY += (mouseY - currentY) * 0.22;
 
-      spotlight.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      spotlight.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0)`;
 
-      if (Math.abs(mouseX - currentX) > 0.15 || Math.abs(mouseY - currentY) > 0.15) {
+      if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
         rafId = requestAnimationFrame(renderSpotlight);
       } else {
         isMoving = false;
@@ -1499,67 +1500,221 @@
     }
 
     window.addEventListener('pointermove', onPointerMove, { passive: true });
-    window.addEventListener('pointerleave', () => {
+    document.addEventListener('mouseleave', () => {
       spotlight.classList.remove('active');
       isMoving = false;
       if (rafId) cancelAnimationFrame(rafId);
     }, { passive: true });
+
+    // Card-level subtle hover illumination
+    const cards = document.querySelectorAll('.feature-quad-card, .type-showcase-card, .template-card, .live-preview-card, .ai-tool-card, .learning-item-card, .highlight-metric-card, .story-quote-card, .story-evolution-card, .about-profile-card');
+    cards.forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--card-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--card-y', `${e.clientY - rect.top}px`);
+      }, { passive: true });
+    });
   }
 
   // ===================================================================
-  //  CLIENT-SIDE ROUTER
+  //  SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+  // ===================================================================
+  function initScrollAnimations() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('is-revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  }
+
+  // ===================================================================
+  //  FLOATING NAVBAR SCROLL SHADOW BEHAVIOR
+  // ===================================================================
+  function initNavbarScroll() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    function checkScroll() {
+      if (window.scrollY > 15) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  }
+
+  // ===================================================================
+  //  CURATED TEMPLATES PRESETS HANDLER
+  // ===================================================================
+  function initTemplatePresets() {
+    const templateConfigs = {
+      vcard: {
+        type: 'vcard',
+        c1: '#7A1736',
+        c2: '#541126',
+        dot: 'rounded',
+        cornerSquare: 'extra-rounded',
+        cornerDot: 'dot',
+        ec: 'H'
+      },
+      wifi: {
+        type: 'wifi',
+        c1: '#68152F',
+        c2: '#A83D5D',
+        dot: 'dots',
+        cornerSquare: 'square',
+        cornerDot: 'dot',
+        ec: 'M'
+      },
+      menu: {
+        type: 'url',
+        c1: '#7A1736',
+        c2: '#A83D5D',
+        dot: 'classy-rounded',
+        cornerSquare: 'extra-rounded',
+        cornerDot: 'dot',
+        ec: 'H'
+      },
+      portfolio: {
+        type: 'url',
+        c1: '#541126',
+        c2: '#7A1736',
+        dot: 'extra-rounded',
+        cornerSquare: 'dot',
+        cornerDot: 'dot',
+        ec: 'H'
+      }
+    };
+
+    document.querySelectorAll('[data-template-apply]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const key = btn.getAttribute('data-template-apply');
+        const config = templateConfigs[key];
+        if (!config) return;
+
+        // Apply config to state
+        state.dotColor1 = config.c1;
+        state.dotColor2 = config.c2;
+        state.dotType = config.dot;
+        state.cornerSquareType = config.cornerSquare;
+        state.cornerDotType = config.cornerDot;
+        state.cornerSquareColor = config.c1;
+        state.cornerDotColor = config.c2;
+        state.errorCorrectionLevel = config.ec;
+
+        // Update inputs
+        if (el.dotColor1Input) el.dotColor1Input.value = config.c1;
+        if (el.dotColor1Text) el.dotColor1Text.value = config.c1;
+        if (el.dotColor2Input) el.dotColor2Input.value = config.c2;
+        if (el.dotColor2Text) el.dotColor2Text.value = config.c2;
+        if (el.cornerSquareColorInput) el.cornerSquareColorInput.value = config.c1;
+        if (el.cornerDotColorInput) el.cornerDotColorInput.value = config.c2;
+
+        // Update active tiles in UI
+        document.querySelectorAll('.dot-style-tile').forEach(t => {
+          t.classList.toggle('active', t.getAttribute('data-style') === config.dot);
+        });
+        document.querySelectorAll('.corner-square-tile').forEach(t => {
+          t.classList.toggle('active', t.getAttribute('data-style') === config.cornerSquare);
+        });
+        document.querySelectorAll('.corner-dot-tile').forEach(t => {
+          t.classList.toggle('active', t.getAttribute('data-style') === config.cornerDot);
+        });
+
+        // Navigate to generator
+        window.location.hash = '#/generator';
+        setTimeout(() => {
+          const typeBtn = document.querySelector(`.type-nav-btn[data-type="${config.type}"]`);
+          if (typeBtn) typeBtn.click();
+          refreshQRCode();
+          showToast(`Applied ${key.toUpperCase()} template preset`, 'info');
+        }, 100);
+      });
+    });
+  }
+
+  // ===================================================================
+  //  CLIENT-SIDE ROUTER & SECTION SCROLL SPY
   // ===================================================================
   function initRouter() {
     const viewHome = document.getElementById('viewHome');
     const viewGenerator = document.getElementById('viewGenerator');
-    const navLinks = document.querySelectorAll('.nav-link-btn, .mobile-nav-link, [data-nav]');
+    const viewAbout = document.getElementById('viewAbout');
+
+    function setActiveNav(targetKey) {
+      document.querySelectorAll('.nav-link-btn, .mobile-nav-link').forEach(link => {
+        const key = link.getAttribute('data-nav');
+        if (key) {
+          link.classList.toggle('active', key === targetKey);
+        }
+      });
+    }
 
     function activateView(path) {
       const isGenerator = path.includes('/generator') || path.includes('generator');
-      
-      if (viewHome) {
-        viewHome.classList.toggle('active', !isGenerator);
-        viewHome.style.display = isGenerator ? 'none' : 'block';
-        viewHome.style.opacity = isGenerator ? '0' : '1';
-      }
-      if (viewGenerator) {
-        viewGenerator.classList.toggle('active', isGenerator);
-        viewGenerator.style.display = isGenerator ? 'block' : 'none';
-        viewGenerator.style.opacity = isGenerator ? '1' : '0';
-      }
+      const isAbout = path.includes('/about') || path.includes('about');
+      const isTemplates = path.includes('templates');
 
-      // Update active nav links
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        const nav = link.getAttribute('data-nav') || '';
-        if (isGenerator) {
-          link.classList.toggle('active', href.includes('/generator') || nav === 'generator');
-        } else {
-          link.classList.toggle('active', href === '#/' || href === '' || nav === 'home');
-        }
-      });
-
-      // Update mobile drawer state
-      const navLinkHome = document.getElementById('navLinkHome');
-      const navLinkGenerator = document.getElementById('navLinkGenerator');
-      if (navLinkHome) navLinkHome.classList.toggle('active', !isGenerator);
-      if (navLinkGenerator) navLinkGenerator.classList.toggle('active', isGenerator);
-
-      // If switching to generator, init QR code if not yet done
-      if (isGenerator && !qrCode) {
-        setTimeout(() => {
-          initQRCode();
-          renderHistory();
-        }, 50);
-      }
-
-      // Launch specific type if URL has ?type=xxx
       if (isGenerator) {
+        if (viewHome) { viewHome.style.display = 'none'; viewHome.classList.remove('active'); }
+        if (viewAbout) { viewAbout.style.display = 'none'; viewAbout.classList.remove('active'); }
+        if (viewGenerator) { viewGenerator.style.display = 'block'; viewGenerator.classList.add('active'); }
+        setActiveNav('generator');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        if (!qrCode) {
+          setTimeout(() => {
+            initQRCode();
+            renderHistory();
+          }, 50);
+        }
+
         const urlParams = new URLSearchParams(window.location.search);
         const launchType = urlParams.get('type');
         if (launchType) {
           const typeBtn = document.querySelector(`.type-nav-btn[data-type="${launchType}"]`);
           if (typeBtn) typeBtn.click();
+        }
+      } else if (isAbout) {
+        if (viewHome) { viewHome.style.display = 'none'; viewHome.classList.remove('active'); }
+        if (viewGenerator) { viewGenerator.style.display = 'none'; viewGenerator.classList.remove('active'); }
+        if (viewAbout) { viewAbout.style.display = 'block'; viewAbout.classList.add('active'); }
+        setActiveNav('about');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        // Home view
+        if (viewGenerator) { viewGenerator.style.display = 'none'; viewGenerator.classList.remove('active'); }
+        if (viewAbout) { viewAbout.style.display = 'none'; viewAbout.classList.remove('active'); }
+        if (viewHome) { viewHome.style.display = 'block'; viewHome.classList.add('active'); }
+
+        if (isTemplates) {
+          setActiveNav('templates');
+          const templatesSection = document.getElementById('templates');
+          if (templatesSection) {
+            setTimeout(() => {
+              templatesSection.scrollIntoView({ behavior: 'smooth' });
+            }, 60);
+          }
+        } else {
+          setActiveNav('home');
         }
       }
     }
@@ -1570,15 +1725,41 @@
       
       const href = anchor.getAttribute('href');
       if (!href || href.startsWith('http') || href.startsWith('mailto')) return;
-      if (href.startsWith('#about') || href.startsWith('#templates') || href.startsWith('#features')) return;
 
-      if (href.startsWith('#/') || href === '#') {
+      if (href === '#templates') {
         e.preventDefault();
-        const path = href.replace('#', '');
-        window.location.hash = '#' + path;
-        activateView(path);
         closeMobileDrawer();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const isNotOnHome = (viewGenerator && viewGenerator.classList.contains('active')) ||
+                            (viewAbout && viewAbout.classList.contains('active'));
+        if (isNotOnHome) {
+          window.location.hash = '#templates';
+          activateView('#templates');
+        } else {
+          window.location.hash = '#templates';
+          setActiveNav('templates');
+          const target = document.getElementById('templates');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+        return;
+      }
+
+      if (href === '#/' || href === '#' || href === '#home') {
+        e.preventDefault();
+        closeMobileDrawer();
+        const wasNotOnHome = (viewGenerator && viewGenerator.classList.contains('active')) ||
+                             (viewAbout && viewAbout.classList.contains('active'));
+        window.location.hash = '#/';
+        activateView('#/');
+        window.scrollTo({ top: 0, behavior: wasNotOnHome ? 'instant' : 'smooth' });
+        return;
+      }
+
+      if (href.startsWith('#/')) {
+        e.preventDefault();
+        closeMobileDrawer();
+        window.location.hash = href;
+        activateView(href);
+        return;
       }
     }
 
@@ -1586,6 +1767,27 @@
     window.addEventListener('hashchange', () => {
       activateView(window.location.hash);
     });
+
+    // ScrollSpy for Home View Sections (Templates vs Home)
+    function initScrollSpy() {
+      const templatesSection = document.getElementById('templates');
+      if (!templatesSection) return;
+
+      function onScroll() {
+        if (!viewHome || viewHome.style.display === 'none') return;
+        const rect = templatesSection.getBoundingClientRect();
+        // If templates section is occupying the top/center of screen
+        if (rect.top <= 200 && rect.bottom >= 150) {
+          setActiveNav('templates');
+        } else if (rect.top > 200) {
+          setActiveNav('home');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    initScrollSpy();
 
     // Initial load routing
     const currentHash = window.location.hash || '#/';
@@ -1823,6 +2025,10 @@
     initMobileMenu();
     initHomeTypeLaunch();
     initFormatSelector();
+    initSpotlightCursor();
+    initScrollAnimations();
+    initNavbarScroll();
+    initTemplatePresets();
     
     // Initialize QR only when on generator page
     const isGeneratorPage = window.location.hash.includes('/generator');

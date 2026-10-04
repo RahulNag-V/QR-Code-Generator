@@ -15,28 +15,33 @@
   <!-- Ambient Background Texture -->
   <div class="bg-ambient-layer" aria-hidden="true"></div>
 
+  <!-- Cursor Spotlight Effect (Desktop Only) -->
+  <div class="cursor-spotlight-layer" id="cursorSpotlight" aria-hidden="true"></div>
+
   <!-- Header Navigation -->
   <header class="site-header">
     <div class="site-nav-container">
       <a href="#/" class="brand-anchor" id="navBrandLink">
         <div class="brand-glyph-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
             <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
             <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
             <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
           </svg>
         </div>
-        <span>OMNIQR</span>
-        <span class="brand-badge-version">Studio</span>
+        <div class="brand-text-wrap">
+          <span class="brand-name">OMNIQR</span>
+          <span class="brand-badge-version">Studio</span>
+        </div>
       </a>
 
       <!-- Desktop Navigation -->
       <nav class="desktop-nav-links" aria-label="Main Navigation">
-        <a href="#/" class="nav-link-btn active" id="navLinkHome">Home</a>
-        <a href="#/generator" class="nav-link-btn" id="navLinkGenerator">QR Generator</a>
-        <a href="#templates" class="nav-link-btn" id="navLinkTemplates">Templates</a>
-        <a href="#about" class="nav-link-btn" id="navLinkAbout">About</a>
+        <a href="#/" class="nav-link-btn active" id="navLinkHome" data-nav="home">Home</a>
+        <a href="#/generator" class="nav-link-btn" id="navLinkGenerator" data-nav="generator">QR Generator</a>
+        <a href="#templates" class="nav-link-btn" id="navLinkTemplates" data-nav="templates">Templates</a>
+        <a href="#/about" class="nav-link-btn" id="navLinkAbout" data-nav="about">About</a>
       </nav>
 
       <!-- Desktop Header Actions -->
@@ -46,7 +51,7 @@
           <span>GitHub</span>
         </a>
         <a href="#/generator" class="btn-nav-primary" id="navCtaBtn">
-          <span>Create QR Code</span>
+          <span>Create QR</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
         <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" type="button">
@@ -70,7 +75,7 @@
       <span>Templates</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </a>
-    <a href="#about" class="mobile-nav-link" data-nav="about">
+    <a href="#/about" class="mobile-nav-link" data-nav="about">
       <span>About</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </a>
@@ -87,106 +92,148 @@
     <div class="home-container">
 
       <!-- Hero Section -->
-      <section class="hero-section">
+      <section class="hero-section scroll-reveal">
         <div class="hero-content-col">
-          <div class="hero-badge-pill">
-            <span class="hero-badge-dot"></span>
-            <span>OmniQR Studio</span>
+          <div class="hero-eyebrow-pill">
+            <span class="hero-eyebrow-dot"></span>
+            <span>100% FREE FOR EVERYONE &bull; NO TIME LIMITS</span>
           </div>
-          
+
           <h1 class="hero-title">
-            Create QR codes that look as good as <span class="hero-title-accent">your brand.</span>
+            Create QR codes<br class="hero-break">that look as good as <span class="hero-title-accent">your brand.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Generate, customize and export beautiful QR codes for links, files, Wi-Fi, contacts and more.
+            Generate, customize and export high-resolution QR codes in seconds. Completely free for everyone with zero cost, no time limits, no expiration, and no sign-up required.
           </p>
 
           <div class="hero-cta-group">
             <a href="#/generator" class="btn-hero-primary" id="heroCreateBtn">
-              <span>Create QR Code</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <span>Create QR Code →</span>
             </a>
-            <a href="#features" class="btn-hero-secondary" id="heroExploreBtn">
-              <span>Explore Features</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <a href="#templates" class="btn-hero-secondary" id="heroExploreBtn">
+              <span>Explore Templates</span>
             </a>
           </div>
 
           <div class="hero-trust-chips">
-            <span class="hero-trust-chip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Lossless SVG & 4K Print
+            <span class="hero-trust-chip hero-trust-chip--highlight">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              100% Free for Everyone
+            </span>
+            <span class="hero-trust-chip hero-trust-chip--highlight">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              No Time Limits or Expiration
+            </span>
+            <span class="hero-trust-chip hero-trust-chip--highlight">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero Cost &bull; Unlimited Use
             </span>
             <span class="hero-trust-chip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Zero Watermarks
-            </span>
-            <span class="hero-trust-chip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Live Error Correction
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              No Watermarks or Sign-up
             </span>
           </div>
         </div>
 
-        <!-- Hero 3D QR Composition (Right side) -->
-        <div class="hero-3d-stage">
-          <div class="qr-3d-scene">
-            <div class="qr-3d-shadow"></div>
-            <div class="qr-3d-base">
-              <div class="qr-3d-mockup-grid">
-                <!-- Eye 1 -->
-                <div class="qr-3d-mod eye-outer"><div class="qr-3d-mod eye-inner"></div></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-                <!-- Eye 2 -->
-                <div class="qr-3d-mod eye-outer" style="grid-column: 6 / span 2;"><div class="qr-3d-mod eye-inner"></div></div>
+        <!-- Hero Interactive Floating QR Card (Right side) -->
+        <div class="hero-preview-col">
+          <div class="hero-floating-qr-card">
+            <div class="hero-card-header">
+              <div class="hero-card-status">
+                <span class="status-dot-pulse"></span>
+                <span>Scan ready</span>
+              </div>
+              <span class="hero-card-tag">OmniQR</span>
+            </div>
+
+            <div class="hero-card-qr-wrap">
+              <svg class="hero-card-qr-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="heroQrGrad" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7A1736" />
+                    <stop offset="100%" stop-color="#541126" />
+                  </linearGradient>
+                </defs>
+                <!-- Top Left Eye -->
+                <rect x="10" y="10" width="40" height="40" rx="10" stroke="url(#heroQrGrad)" stroke-width="5.5"/>
+                <rect x="21" y="21" width="18" height="18" rx="4.5" fill="url(#heroQrGrad)"/>
+                <!-- Top Right Eye -->
+                <rect x="110" y="10" width="40" height="40" rx="10" stroke="url(#heroQrGrad)" stroke-width="5.5"/>
+                <rect x="121" y="21" width="18" height="18" rx="4.5" fill="url(#heroQrGrad)"/>
+                <!-- Bottom Left Eye -->
+                <rect x="10" y="110" width="40" height="40" rx="10" stroke="url(#heroQrGrad)" stroke-width="5.5"/>
+                <rect x="21" y="121" width="18" height="18" rx="4.5" fill="url(#heroQrGrad)"/>
                 
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod accent"></div>
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
+                <!-- Modules -->
+                <rect x="60" y="12" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="76" y="12" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="12" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="60" y="28" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="28" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="60" y="44" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="76" y="44" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="44" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                
+                <rect x="12" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="28" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="44" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="60" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="76" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="124" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="140" y="60" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
 
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod accent"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
+                <rect x="12" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="44" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="60" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                
+                <!-- Center Brand Badge -->
+                <rect x="71" y="71" width="18" height="18" rx="4" fill="#7A1736"/>
+                <path d="M76 80h8M80 76v8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
 
-                <!-- Eye 3 -->
-                <div class="qr-3d-mod eye-outer" style="grid-row: 6 / span 2;"><div class="qr-3d-mod eye-inner"></div></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod accent"></div>
-                <div class="qr-3d-mod"></div>
+                <rect x="92" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="140" y="76" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
 
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-                <div class="qr-3d-mod active"></div>
-                <div class="qr-3d-mod"></div>
-              </div>
+                <rect x="12" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="28" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="44" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="60" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="76" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="140" y="92" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
 
-              <!-- Subtle 3D Floating Badges -->
-              <div class="qr-3d-float-pill top-right">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Scan Quality: Excellent</span>
-              </div>
-              <div class="qr-3d-float-pill bottom-left">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Live Synced</span>
-              </div>
+                <rect x="60" y="108" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="108" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="108" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="124" y="108" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="140" y="108" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+
+                <rect x="60" y="124" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="76" y="124" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="124" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="140" y="124" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+
+                <rect x="60" y="140" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="92" y="140" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="108" y="140" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+                <rect x="124" y="140" width="8" height="8" rx="2" fill="url(#heroQrGrad)"/>
+              </svg>
+            </div>
+
+            <div class="hero-card-footer">
+              <span class="hero-card-caption">Scan to experience OmniQR</span>
+              <span class="hero-card-hint">● Scan ready</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Trust / Product Intro Section (4 Features) -->
-      <section class="features-grid-section" id="features">
+      <!-- Studio Capabilities (4 Feature Cards) -->
+      <section class="features-grid-section scroll-reveal" id="features">
         <div class="section-header-block">
           <span class="section-label-tag">Studio Capabilities</span>
           <h2 class="section-main-heading">Everything you need to create better QR codes.</h2>
@@ -194,41 +241,84 @@
         </div>
 
         <div class="features-quad-grid">
-          <div class="feature-quad-card">
-            <span class="feature-num-badge">01</span>
+          <div class="feature-quad-card" style="--stagger-delay: 0ms;">
+            <div class="feature-card-header">
+              <span class="feature-num-badge">01</span>
+              <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
             <h3 class="feature-card-title">Generate</h3>
             <p class="feature-card-desc">Create QR codes from URLs, text, Wi-Fi, contacts, files and more.</p>
+            <div class="feature-subtle-visual">
+              <span class="visual-chip">URL</span>
+              <span class="visual-chip">vCard</span>
+              <span class="visual-chip">Wi-Fi</span>
+              <span class="visual-chip">File</span>
+            </div>
           </div>
-          <div class="feature-quad-card">
-            <span class="feature-num-badge">02</span>
+
+          <div class="feature-quad-card" style="--stagger-delay: 80ms;">
+            <div class="feature-card-header">
+              <span class="feature-num-badge">02</span>
+              <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+            </div>
             <h3 class="feature-card-title">Customize</h3>
             <p class="feature-card-desc">Control colors, patterns, corners, logos and more.</p>
+            <div class="feature-subtle-visual">
+              <span class="visual-dot dot-burgundy"></span>
+              <span class="visual-dot dot-wine"></span>
+              <span class="visual-dot dot-soft"></span>
+              <span class="visual-label">Smooth Modules</span>
+            </div>
           </div>
-          <div class="feature-quad-card">
-            <span class="feature-num-badge">03</span>
+
+          <div class="feature-quad-card" style="--stagger-delay: 160ms;">
+            <div class="feature-card-header">
+              <span class="feature-num-badge">03</span>
+              <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+            </div>
             <h3 class="feature-card-title">Preview</h3>
             <p class="feature-card-desc">See your QR code update instantly while you design.</p>
+            <div class="feature-subtle-visual">
+              <span class="visual-status-pill">● Scan Quality: 100%</span>
+            </div>
           </div>
-          <div class="feature-quad-card">
-            <span class="feature-num-badge">04</span>
+
+          <div class="feature-quad-card" style="--stagger-delay: 240ms;">
+            <div class="feature-card-header">
+              <span class="feature-num-badge">04</span>
+              <div class="feature-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+            </div>
             <h3 class="feature-card-title">Export</h3>
             <p class="feature-card-desc">Download high-quality PNG, JPG or SVG files.</p>
+            <div class="feature-subtle-visual">
+              <span class="visual-chip">SVG</span>
+              <span class="visual-chip">PNG</span>
+              <span class="visual-chip">4K</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- QR Type Showcase Section -->
-      <section class="types-showcase-section">
+      <section class="types-showcase-section scroll-reveal">
         <div class="section-header-block">
-          <span class="section-label-tag">Versatile Payloads</span>
-          <h2 class="section-main-heading">One generator. Multiple possibilities.</h2>
+          <span class="section-label-tag">Payload Formats</span>
+          <h2 class="section-main-heading">One studio. Every payload format.</h2>
           <p class="section-main-subtext">Click any payload format to launch the generator with your chosen configuration.</p>
         </div>
 
         <div class="types-cards-grid">
           <a href="#/generator?type=url" class="type-showcase-card" data-launch-type="url">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <h3 class="type-showcase-title">Website</h3>
             <p class="type-showcase-desc">Direct links, portfolio showcases, landing pages, and web apps.</p>
@@ -236,7 +326,7 @@
 
           <a href="#/generator?type=text" class="type-showcase-card" data-launch-type="text">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
             </div>
             <h3 class="type-showcase-title">Text</h3>
             <p class="type-showcase-desc">Plain text messages, promotional codes, or private notes.</p>
@@ -244,7 +334,7 @@
 
           <a href="#/generator?type=wifi" class="type-showcase-card" data-launch-type="wifi">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
             </div>
             <h3 class="type-showcase-title">Wi-Fi</h3>
             <p class="type-showcase-desc">Instant one-tap wireless connection without typing passwords.</p>
@@ -252,7 +342,7 @@
 
           <a href="#/generator?type=vcard" class="type-showcase-card" data-launch-type="vcard">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <h3 class="type-showcase-title">Contact</h3>
             <p class="type-showcase-desc">vCard format with full name, phone number, email, and company.</p>
@@ -260,7 +350,7 @@
 
           <a href="#/generator?type=image" class="type-showcase-card" data-launch-type="image">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             </div>
             <h3 class="type-showcase-title">Image</h3>
             <p class="type-showcase-desc">Photos, restaurant menus, event posters, and artwork uploads.</p>
@@ -268,7 +358,7 @@
 
           <a href="#/generator?type=video" class="type-showcase-card" data-launch-type="video">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
             </div>
             <h3 class="type-showcase-title">Video</h3>
             <p class="type-showcase-desc">YouTube clips, Reels, product demos, or MP4 video files.</p>
@@ -276,7 +366,7 @@
 
           <a href="#/generator?type=audio" class="type-showcase-card" data-launch-type="audio">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             </div>
             <h3 class="type-showcase-title">Audio</h3>
             <p class="type-showcase-desc">Podcasts, music tracks, voice guides, and MP3 streaming.</p>
@@ -284,7 +374,7 @@
 
           <a href="#/generator?type=file" class="type-showcase-card" data-launch-type="file">
             <div class="type-showcase-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <h3 class="type-showcase-title">Document</h3>
             <p class="type-showcase-desc">PDF brochures, whitepapers, spreadsheets, and zip archives.</p>
@@ -292,110 +382,148 @@
         </div>
       </section>
 
-      <!-- Interactive Product Preview Section -->
-      <section class="product-preview-section">
+      <!-- Curated Templates Section -->
+      <section class="templates-section scroll-reveal" id="templates">
         <div class="section-header-block">
-          <span class="section-label-tag">Studio Experience</span>
-          <h2 class="section-main-heading">Design it your way.</h2>
-          <p class="section-main-subtext">An uncluttered two-column layout that keeps your live QR preview front and center.</p>
+          <span class="section-label-tag">Curated Templates</span>
+          <h2 class="section-main-heading">Start with a designer-crafted preset.</h2>
+          <p class="section-main-subtext">Pre-configured styling, error tolerances, and color palettes optimized for every medium.</p>
         </div>
 
-        <div class="mockup-workspace-frame">
-          <div class="mockup-window-header">
-            <div class="mockup-window-dots">
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
+        <div class="templates-grid">
+          <div class="template-card" data-template-preset="vcard">
+            <div class="template-card-top">
+              <span class="template-badge">Executive</span>
+              <span class="template-category">Stationery</span>
             </div>
-            <span class="mockup-window-url">omniqr-studio.web.app/generator</span>
-            <div style="width: 48px;"></div>
+            <h3 class="template-title">Executive vCard</h3>
+            <p class="template-desc">Deep Burgundy and Wine gradient with rounded eye frames, tailored for professional business cards.</p>
+            <div class="template-meta-row">
+              <span class="template-tag">Burgundy Classic</span>
+              <span class="template-tag">Rounded Eyes</span>
+            </div>
+            <button type="button" class="btn-template-apply" data-template-apply="vcard">
+              <span>Use Template</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
           </div>
 
-          <div class="mockup-body-split">
-            <div class="mockup-controls-col">
-              <div class="mockup-control-row">
-                <span style="font-weight: 600; font-size: 0.9rem;">🎨 Pattern Gradient</span>
-                <span class="control-value-badge">Burgundy / Dark Wine</span>
-              </div>
-              <div class="mockup-control-row">
-                <span style="font-weight: 600; font-size: 0.9rem;">▣ Module Shape</span>
-                <span class="control-value-badge">Rounded Smooth</span>
-              </div>
-              <div class="mockup-control-row">
-                <span style="font-weight: 600; font-size: 0.9rem;">◉ Outer Eye Style</span>
-                <span class="control-value-badge">Extra Rounded</span>
-              </div>
-              <div class="mockup-control-row">
-                <span style="font-weight: 600; font-size: 0.9rem;">◇ Center Brand Logo</span>
-                <span class="control-value-badge">SVG Protected</span>
-              </div>
+          <div class="template-card" data-template-preset="wifi">
+            <div class="template-card-top">
+              <span class="template-badge">Hospitality</span>
+              <span class="template-category">Signage</span>
             </div>
+            <h3 class="template-title">Guest Wi-Fi Tent</h3>
+            <p class="template-desc">Instant smartphone scanning for coffee shops, offices, and conference tables without manual passwords.</p>
+            <div class="template-meta-row">
+              <span class="template-tag">Deep Wine</span>
+              <span class="template-tag">Dot Pattern</span>
+            </div>
+            <button type="button" class="btn-template-apply" data-template-apply="wifi">
+              <span>Use Template</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
 
-            <div class="mockup-preview-col">
-              <div class="mockup-qr-canvas-box">
-                <svg width="150" height="150" viewBox="0 0 24 24" fill="#6D1F3A">
-                  <rect x="2" y="2" width="7" height="7" rx="1.5" />
-                  <rect x="15" y="2" width="7" height="7" rx="1.5" />
-                  <rect x="2" y="15" width="7" height="7" rx="1.5" />
-                  <rect x="4" y="4" width="3" height="3" fill="#FFFFFF"/>
-                  <rect x="17" y="4" width="3" height="3" fill="#FFFFFF"/>
-                  <rect x="4" y="17" width="3" height="3" fill="#FFFFFF"/>
-                  <circle cx="12" cy="5" r="1.2"/>
-                  <circle cx="12" cy="9" r="1.2"/>
-                  <circle cx="12" cy="15" r="1.2"/>
-                  <circle cx="12" cy="19" r="1.2"/>
-                  <circle cx="5.5" cy="12" r="1.2"/>
-                  <circle cx="18.5" cy="12" r="1.2"/>
-                  <rect x="15" y="15" width="3" height="3" rx="0.5"/>
-                  <rect x="19" y="15" width="3" height="3" rx="0.5"/>
-                  <rect x="15" y="19" width="3" height="3" rx="0.5"/>
-                  <rect x="19" y="19" width="3" height="3" rx="0.5"/>
-                </svg>
-              </div>
-              <div class="scan-quality-pill quality-excellent" style="width: 220px;">
-                <span>Scan Quality</span>
-                <span>Excellent</span>
-              </div>
+          <div class="template-card" data-template-preset="menu">
+            <div class="template-card-top">
+              <span class="template-badge">Dining</span>
+              <span class="template-category">Print & Web</span>
             </div>
+            <h3 class="template-title">Restaurant Menu</h3>
+            <p class="template-desc">High-contrast modules engineered for low ambient indoor dining light and quick camera focusing.</p>
+            <div class="template-meta-row">
+              <span class="template-tag">Velvet Crimson</span>
+              <span class="template-tag">Curve Modules</span>
+            </div>
+            <button type="button" class="btn-template-apply" data-template-apply="menu">
+              <span>Use Template</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+
+          <div class="template-card" data-template-preset="portfolio">
+            <div class="template-card-top">
+              <span class="template-badge">Creator</span>
+              <span class="template-category">Portfolio</span>
+            </div>
+            <h3 class="template-title">Portfolio & Socials</h3>
+            <p class="template-desc">Smooth corner geometry with centered branding emblem for Instagram link-in-bio, Behance, and GitHub.</p>
+            <div class="template-meta-row">
+              <span class="template-tag">Deep Plum</span>
+              <span class="template-tag">Brand Shield</span>
+            </div>
+            <button type="button" class="btn-template-apply" data-template-apply="portfolio">
+              <span>Use Template</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- 3D Visual Detail Section: Floating QR Tile Stack -->
-      <section class="tile-stack-section">
-        <div class="tile-stack-wrapper">
-          <div>
+      <!-- Precision Engineering Section -->
+      <section class="precision-section scroll-reveal">
+        <div class="precision-container">
+          <div class="precision-content">
             <span class="section-label-tag">Geometric Precision</span>
-            <h2 class="section-main-heading">Precision down to the last module.</h2>
-            <p class="section-main-subtext" style="margin-top: 1rem;">
+            <h2 class="section-main-heading">Engineered for flawless scanning.</h2>
+            <p class="section-main-subtext">
               Every module, quiet zone padding, and error correction layer is mathematically computed for instant mobile camera detection under any lighting condition.
             </p>
-            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
-              <div class="hero-trust-chip">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Automated Reed-Solomon Error Correction up to 30%</span>
+            <div class="precision-bullets">
+              <div class="precision-bullet-item">
+                <div class="bullet-check-box">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <span class="bullet-title">Automated Reed-Solomon Correction</span>
+                  <span class="bullet-desc">Up to 30% data recovery with adaptive symbol weighting.</span>
+                </div>
               </div>
-              <div class="hero-trust-chip">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Lossless SVG vector rendering with no pixelation</span>
+              <div class="precision-bullet-item">
+                <div class="bullet-check-box">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <span class="bullet-title">Lossless SVG Vector Rendering</span>
+                  <span class="bullet-desc">Zero pixelation at billboard scale or business card print size.</span>
+                </div>
               </div>
-              <div class="hero-trust-chip">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Smart protective margins preventing logo collision</span>
+              <div class="precision-bullet-item">
+                <div class="bullet-check-box">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <span class="bullet-title">Smart Protective Margins</span>
+                  <span class="bullet-desc">Guaranteed clearance zones preventing brand logo collisions.</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="stack-3d-stage">
-            <div class="stack-3d-layers">
-              <div class="stack-layer stack-layer-1">
-                <span style="font-size: 0.75rem; font-weight: 600; color: var(--foreground-subtle);">Base Quiet Zone</span>
+          <div class="precision-visual">
+            <div class="precision-spec-card">
+              <div class="spec-card-header">
+                <span class="spec-label">Scan Diagnostics</span>
+                <span class="spec-badge">WCAG AAA</span>
               </div>
-              <div class="stack-layer stack-layer-2">
-                <span style="font-size: 0.75rem; font-weight: 600; color: var(--primary);">Data Module Matrix</span>
-              </div>
-              <div class="stack-layer stack-layer-3">
-                <span>Branded Center Eye</span>
+              <div class="spec-metrics-grid">
+                <div class="spec-metric">
+                  <span class="metric-val">30%</span>
+                  <span class="metric-lbl">Error Tolerance</span>
+                </div>
+                <div class="spec-metric">
+                  <span class="metric-val">12.4:1</span>
+                  <span class="metric-lbl">Contrast Ratio</span>
+                </div>
+                <div class="spec-metric">
+                  <span class="metric-val">4 Modules</span>
+                  <span class="metric-lbl">Quiet Zone</span>
+                </div>
+                <div class="spec-metric">
+                  <span class="metric-val">&lt; 15ms</span>
+                  <span class="metric-lbl">Decode Latency</span>
+                </div>
               </div>
             </div>
           </div>
@@ -403,13 +531,13 @@
       </section>
 
       <!-- Final Call to Action -->
-      <section class="final-cta-section">
+      <section class="final-cta-section scroll-reveal">
         <div class="final-cta-card">
-          <h2 class="final-cta-title">Ready to create your QR code?</h2>
-          <p class="final-cta-subtext">No sign-up required. Free to generate, customize, and export in full high-definition resolution.</p>
-          <a href="#/generator" class="btn-hero-primary" id="finalCtaBtn" style="padding: 0.95rem 2rem; font-size: 1.05rem;">
-            <span>Start Creating</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span class="final-cta-eyebrow">100% FREE FOR EVERYONE &bull; NO TIME LIMITS</span>
+          <h2 class="final-cta-title">Create your brand QR code now.</h2>
+          <p class="final-cta-subtext">Fully free for everyone with zero cost, no expiration dates, no time limits, and no account needed. Generate and export unlimited high-resolution QR codes forever.</p>
+          <a href="#/generator" class="btn-hero-primary" id="finalCtaBtn">
+            <span>Start Creating Now →</span>
           </a>
         </div>
       </section>
@@ -721,7 +849,7 @@
                         <input type="radio" name="colorType" value="single" style="accent-color: #6D1F3A;"> Solid
                       </label>
                       <label style="cursor: pointer; display: flex; align-items: center; gap: 0.35rem;">
-                        <input type="radio" name="colorType" value="gradient" checked style="accent-color: #6D1F3A;"> Gradient
+                        <input type="radio" name="colorType" value="gradient" checked style="accent-color: #7A1736;"> Gradient
                       </label>
                     </div>
                   </div>
@@ -730,15 +858,15 @@
                     <div class="control-field">
                       <label class="control-label" for="dotColor1Input">Primary Burgundy</label>
                       <div class="color-input-combo">
-                        <input type="color" id="dotColor1Input" class="native-color-picker" value="#6D1F3A">
-                        <input type="text" id="dotColor1Text" class="color-text-input" value="#6D1F3A" maxlength="7">
+                        <input type="color" id="dotColor1Input" class="native-color-picker" value="#7A1736">
+                        <input type="text" id="dotColor1Text" class="color-text-input" value="#7A1736" maxlength="7">
                       </div>
                     </div>
                     <div class="control-field" id="gradientControls">
-                      <label class="control-label" for="dotColor2Input">Secondary Dark Wine</label>
+                      <label class="control-label" for="dotColor2Input">Deep Burgundy</label>
                       <div class="color-input-combo">
-                        <input type="color" id="dotColor2Input" class="native-color-picker" value="#481328">
-                        <input type="text" id="dotColor2Text" class="color-text-input" value="#481328" maxlength="7">
+                        <input type="color" id="dotColor2Input" class="native-color-picker" value="#541126">
+                        <input type="text" id="dotColor2Text" class="color-text-input" value="#541126" maxlength="7">
                       </div>
                     </div>
                   </div>
@@ -887,15 +1015,15 @@
                     <div class="control-field">
                       <label class="control-label" for="cornerSquareColorInput">Outer Frame</label>
                       <div class="color-input-combo">
-                        <input type="color" id="cornerSquareColorInput" class="native-color-picker" value="#6D1F3A">
-                        <input type="text" id="cornerSquareColorText" class="color-text-input" value="#6D1F3A" maxlength="7">
+                        <input type="color" id="cornerSquareColorInput" class="native-color-picker" value="#7A1736">
+                        <input type="text" id="cornerSquareColorText" class="color-text-input" value="#7A1736" maxlength="7">
                       </div>
                     </div>
                     <div class="control-field">
                       <label class="control-label" for="cornerDotColorInput">Inner Dot</label>
                       <div class="color-input-combo">
-                        <input type="color" id="cornerDotColorInput" class="native-color-picker" value="#6D1F3A">
-                        <input type="text" id="cornerDotColorText" class="color-text-input" value="#6D1F3A" maxlength="7">
+                        <input type="color" id="cornerDotColorInput" class="native-color-picker" value="#7A1736">
+                        <input type="text" id="cornerDotColorText" class="color-text-input" value="#7A1736" maxlength="7">
                       </div>
                     </div>
                   </div>
@@ -1005,36 +1133,36 @@
                 </button>
                 <div class="accordion-panel">
                   <div class="palettes-grid">
-                    <button class="palette-btn active" data-c1="#6D1F3A" data-c2="#481328" data-bg="#ffffff" data-sq="#6D1F3A" data-dt="#6D1F3A" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #6D1F3A, #481328);"></div>
+                    <button class="palette-btn active" data-c1="#7A1736" data-c2="#541126" data-bg="#ffffff" data-sq="#7A1736" data-dt="#7A1736" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #7A1736, #541126);"></div>
                       <span class="palette-name">Burgundy Classic</span>
                     </button>
-                    <button class="palette-btn" data-c1="#6D1F3A" data-c2="#A92737" data-bg="#ffffff" data-sq="#6D1F3A" data-dt="#A92737" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #6D1F3A, #A92737);"></div>
-                      <span class="palette-name">Velvet Crimson</span>
+                    <button class="palette-btn" data-c1="#68152F" data-c2="#A83D5D" data-bg="#ffffff" data-sq="#68152F" data-dt="#A83D5D" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #68152F, #A83D5D);"></div>
+                      <span class="palette-name">Wine Elegance</span>
                     </button>
-                    <button class="palette-btn" data-c1="#6D1F3A" data-c2="#EDC5C8" data-bg="#ffffff" data-sq="#6D1F3A" data-dt="#EDC5C8" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #6D1F3A, #EDC5C8);"></div>
+                    <button class="palette-btn" data-c1="#7A1736" data-c2="#A83D5D" data-bg="#ffffff" data-sq="#7A1736" data-dt="#A83D5D" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #7A1736, #A83D5D);"></div>
                       <span class="palette-name">Rose Wine</span>
                     </button>
-                    <button class="palette-btn" data-c1="#481328" data-c2="#6D1F3A" data-bg="#ffffff" data-sq="#481328" data-dt="#6D1F3A" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #481328, #6D1F3A);"></div>
+                    <button class="palette-btn" data-c1="#541126" data-c2="#7A1736" data-bg="#ffffff" data-sq="#541126" data-dt="#7A1736" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #541126, #7A1736);"></div>
                       <span class="palette-name">Deep Plum</span>
                     </button>
-                    <button class="palette-btn" data-c1="#8C2D19" data-c2="#6D1F3A" data-bg="#ffffff" data-sq="#8C2D19" data-dt="#6D1F3A" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #8C2D19, #6D1F3A);"></div>
+                    <button class="palette-btn" data-c1="#8C2D19" data-c2="#7A1736" data-bg="#ffffff" data-sq="#8C2D19" data-dt="#7A1736" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #8C2D19, #7A1736);"></div>
                       <span class="palette-name">Terracotta</span>
                     </button>
-                    <button class="palette-btn" data-c1="#2B131F" data-c2="#481328" data-bg="#ffffff" data-sq="#2B131F" data-dt="#2B131F" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #2B131F, #481328);"></div>
+                    <button class="palette-btn" data-c1="#2B131F" data-c2="#541126" data-bg="#ffffff" data-sq="#2B131F" data-dt="#2B131F" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #2B131F, #541126);"></div>
                       <span class="palette-name">Espresso</span>
                     </button>
-                    <button class="palette-btn" data-c1="#181416" data-c2="#181416" data-bg="#ffffff" data-sq="#181416" data-dt="#181416" type="button">
-                      <div class="palette-preview" style="background: #181416;"></div>
+                    <button class="palette-btn" data-c1="#171717" data-c2="#171717" data-bg="#ffffff" data-sq="#171717" data-dt="#171717" type="button">
+                      <div class="palette-preview" style="background: #171717;"></div>
                       <span class="palette-name">Classic Onyx</span>
                     </button>
-                    <button class="palette-btn" data-c1="#6D1F3A" data-c2="#481328" data-bg="#FAF9F7" data-sq="#6D1F3A" data-dt="#481328" type="button">
-                      <div class="palette-preview" style="background: linear-gradient(135deg, #6D1F3A, #481328);"></div>
+                    <button class="palette-btn" data-c1="#7A1736" data-c2="#541126" data-bg="#FAFAF9" data-sq="#7A1736" data-dt="#541126" type="button">
+                      <div class="palette-preview" style="background: linear-gradient(135deg, #7A1736, #541126);"></div>
                       <span class="palette-name">Soft Blush</span>
                     </button>
                   </div>
@@ -1175,8 +1303,397 @@
     </div>
   </div>
 
+  <!-- ===================================================================
+       PAGE 3: ABOUT (SEPARATE PAGE VIEW)
+       =================================================================== -->
+  <div id="viewAbout" class="page-view" style="display: none; opacity: 0;">
+    <div class="about-container">
+
+      <!-- 1. About Hero Section -->
+      <section class="about-hero scroll-reveal">
+        <div class="about-hero-header">
+          <div class="about-badge-pill">
+            <span class="status-dot-pulse"></span>
+            <span>Made with AI &bull; Guided by a Developer</span>
+          </div>
+          <h1 class="about-hero-title">
+            Built with curiosity.<br>
+            Powered by AI.<br>
+            <span class="about-title-accent">Designed by a developer.</span>
+          </h1>
+          <p class="about-hero-sub">
+            The story, methodology, and AI-assisted engineering behind OmniQR Studio — born from a real-world frustration with expiring QR trial paywalls.
+          </p>
+          <div class="about-hero-meta-row">
+            <div class="about-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Rahul Nag V</span>
+            </div>
+            <div class="about-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>~1.5h Idea to Deployment</span>
+            </div>
+            <div class="about-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>100% Free Forever</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Developer Profile & Focus Areas -->
+      <section class="about-profile-section scroll-reveal">
+        <div class="about-profile-card">
+          <div class="profile-card-left">
+            <div class="profile-avatar-row">
+              <div class="profile-avatar-box">
+                <span class="profile-initials">RN</span>
+              </div>
+              <div class="profile-title-block">
+                <h2 class="profile-name">Rahul Nag V</h2>
+                <span class="profile-role">Computer Science Engineering Student &amp; Developer</span>
+              </div>
+            </div>
+            <p class="profile-bio">
+              “Hi, I’m Rahul Nag V, a Computer Science Engineering student who enjoys building practical web applications, experimenting with AI-powered development, and exploring modern UI/UX.”
+            </p>
+          </div>
+          <div class="profile-card-right">
+            <span class="profile-interests-label">Interests &amp; Focus Areas</span>
+            <div class="interests-grid">
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                Artificial Intelligence
+              </span>
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Web Development
+              </span>
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                UI/UX Design
+              </span>
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Software Engineering
+              </span>
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                Modern Developer Tools
+              </span>
+              <span class="interest-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Building Practical Products
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Why OmniQR? (Behind the Story) -->
+      <section class="about-story-section scroll-reveal">
+        <div class="about-section-header">
+          <span class="section-label-tag">Behind The Story</span>
+          <h2 class="section-main-heading">Why I Built OmniQR</h2>
+          <p class="section-main-subtext">The story of turning a frustrating 7-day expiration paywall into an independent open studio.</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-quote-card">
+            <div class="story-quote-mark">“</div>
+            <p class="story-quote-text">
+              I was creating a QR code for one of my projects and came across a QR platform that offered a free trial for 7 days. After the trial period, the generated QR code could become inactive unless the user continued with a paid plan.
+            </p>
+            <p class="story-quote-text highlight-thought">
+              That made me think — instead of depending on another platform for something this simple, why not build my own?
+            </p>
+            <p class="story-quote-text">
+              That small thought became OmniQR Studio.
+            </p>
+            <div class="story-quote-author">
+              <span class="quote-author-name">Rahul Nag V</span>
+              <span class="quote-author-note">Creator &amp; Developer</span>
+            </div>
+          </div>
+
+          <div class="story-evolution-card">
+            <h3 class="story-evolution-title">Simplicity Without Complexity</h3>
+            <p class="story-evolution-p">
+              The goal was to create a simple, customizable QR platform where anyone can generate, personalize, and export QR codes without subscription traps or expiring links.
+            </p>
+            <p class="story-evolution-p">
+              What started as a focused project evolved into a comprehensive web suite equipped with:
+            </p>
+            <ul class="evolution-features-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Multiple QR generation types (Website, Text, Wi-Fi, Contact, Media)</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom colors, linear gradients, and background controls</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> QR pattern and eye geometry customization</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logo and brand shield embedding with auto quiet margins</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Real-time live preview with dynamic scan quality rating</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Lossless SVG and 4K PNG exports</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Responsive design with polished modern UI/UX</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Built in the AI Era & Development Lifecycle -->
+      <section class="about-ai-era-section scroll-reveal">
+        <div class="about-section-header">
+          <span class="section-label-tag">AI-Powered Engineering</span>
+          <h2 class="section-main-heading">Built in the AI Era</h2>
+          <p class="section-main-subtext">A transparent breakdown of how modern AI accelerates development under human architectural guidance.</p>
+        </div>
+
+        <div class="ai-philosophy-banner">
+          <div class="philosophy-content">
+            <h3 class="philosophy-title">Human-Guided, AI-Accelerated</h3>
+            <p class="philosophy-desc">
+              AI was used throughout the development process — from brainstorming and planning to UI exploration, coding, debugging, optimization, documentation, and deployment.
+            </p>
+            <div class="philosophy-quote-box">
+              “AI generated ideas, suggestions, and code, but the product direction, feature decisions, design choices, testing, debugging, and final implementation were guided and reviewed by me.”
+            </div>
+          </div>
+          <div class="philosophy-stat-box">
+            <span class="stat-highlight-number">~1.5 Hours</span>
+            <span class="stat-highlight-label">Idea to Deployment</span>
+            <span class="stat-highlight-sub">From concept to production release</span>
+          </div>
+        </div>
+
+        <!-- Workflow Lifecycle Steps -->
+        <div class="timeline-container">
+          <span class="timeline-section-title">Development Workflow &amp; Iteration Lifecycle</span>
+          <div class="timeline-steps-track">
+            <div class="timeline-step-card">
+              <span class="timeline-num">01</span>
+              <h4 class="timeline-title">IDEA</h4>
+              <p class="timeline-desc">Recognizing the expiring QR paywall dilemma and conceptualizing an independent, client-side open studio.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card">
+              <span class="timeline-num">02</span>
+              <h4 class="timeline-title">AI RESEARCH &amp; BRAINSTORMING</h4>
+              <p class="timeline-desc">Evaluating vector graphics standards, QR canvas libraries, error recovery algorithms, and architectural models.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card">
+              <span class="timeline-num">03</span>
+              <h4 class="timeline-title">UI/UX EXPLORATION</h4>
+              <p class="timeline-desc">Curating burgundy &amp; wine color palettes, designing 2-column studio layouts, and crafting floating navigation elements.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card">
+              <span class="timeline-num">04</span>
+              <h4 class="timeline-title">AI-ASSISTED DEVELOPMENT</h4>
+              <p class="timeline-desc">Synthesizing responsive components, state models, live scan diagnostics, and lossless export engines.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card">
+              <span class="timeline-num">05</span>
+              <h4 class="timeline-title">TESTING &amp; DEBUGGING</h4>
+              <p class="timeline-desc">Validating physical device camera focusing, contrast ratios, and automated browser verification tests.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card">
+              <span class="timeline-num">06</span>
+              <h4 class="timeline-title">REFINEMENT</h4>
+              <p class="timeline-desc">Polishing GPU cursor spotlight tracking, micro-interactions, scroll reveal animations, and typography.</p>
+            </div>
+            <div class="timeline-divider"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+            <div class="timeline-step-card timeline-step-card--highlight">
+              <span class="timeline-num">07</span>
+              <h4 class="timeline-title">DEPLOYMENT</h4>
+              <p class="timeline-desc">Automated build and continuous production deployment on Firebase Hosting with zero downtime.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. AI Toolkit -->
+      <section class="about-tools-section scroll-reveal">
+        <div class="about-section-header">
+          <span class="section-label-tag">The Toolkit</span>
+          <h2 class="section-main-heading">AI Tools in the Workflow</h2>
+          <p class="section-main-subtext">Each tool was utilized for its specific strengths across the engineering lifecycle.</p>
+        </div>
+
+        <div class="ai-tools-grid">
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Core Engine</span>
+              <h3 class="ai-tool-name">Antigravity</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for AI-assisted development, implementation, debugging, and project iteration.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Architecture</span>
+              <h3 class="ai-tool-name">ChatGPT</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for brainstorming, architecture discussions, problem solving, documentation, and development assistance.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Reasoning</span>
+              <h3 class="ai-tool-name">Claude</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for reasoning, code analysis, development workflows, and refining implementation ideas.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Design &amp; UI</span>
+              <h3 class="ai-tool-name">21st.dev</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used as a source of modern UI components and interface inspiration.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Exploration</span>
+              <h3 class="ai-tool-name">Google Gemini</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for research, brainstorming, technical exploration, and alternative approaches.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Coding Assist</span>
+              <h3 class="ai-tool-name">GitHub Copilot</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for code suggestions and accelerating repetitive development tasks.
+            </p>
+          </div>
+
+          <div class="ai-tool-card">
+            <div class="ai-tool-header">
+              <span class="ai-tool-pill">Research</span>
+              <h3 class="ai-tool-name">Perplexity</h3>
+            </div>
+            <p class="ai-tool-desc">
+              Used for research and exploring technical concepts and current development approaches.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. What I Learned -->
+      <section class="about-learnings-section scroll-reveal">
+        <div class="about-section-header">
+          <span class="section-label-tag">Engineering Insights</span>
+          <h2 class="section-main-heading">What I Learned</h2>
+          <p class="section-main-subtext">Five core observations distilled from pairing closely with AI on a production web app.</p>
+        </div>
+
+        <div class="learnings-grid">
+          <div class="learning-item-card">
+            <span class="learning-badge">01</span>
+            <h4 class="learning-title">AI Dramatically Accelerates Velocity</h4>
+            <p class="learning-desc">Tasks that previously demanded hours of initial boilerplate setup can be bootstrapped in minutes, unlocking deeper focus on UX details.</p>
+          </div>
+          <div class="learning-item-card">
+            <span class="learning-badge">02</span>
+            <h4 class="learning-title">Good Prompts Require Clear Thinking</h4>
+            <p class="learning-desc">AI cannot solve an ambiguous problem. The clearer your architecture, data contracts, and constraints, the higher the quality of the result.</p>
+          </div>
+          <div class="learning-item-card">
+            <span class="learning-badge">03</span>
+            <h4 class="learning-title">Generated Code Needs Human Review</h4>
+            <p class="learning-desc">Models can miss subtle edge cases or state side-effects. Diligent developer review, unit checks, and manual testing remain indispensable.</p>
+          </div>
+          <div class="learning-item-card">
+            <span class="learning-badge">04</span>
+            <h4 class="learning-title">UI Quality Comes from Iteration</h4>
+            <p class="learning-desc">Refined software isn’t born from one prompt. It is crafted through deliberate cycles of spacing, color tokens, and micro-interactions.</p>
+          </div>
+          <div class="learning-item-card">
+            <span class="learning-badge">05</span>
+            <h4 class="learning-title">Fast Building Doesn’t Mean Skipping Testing</h4>
+            <p class="learning-desc">Velocity only matters if the product functions reliably. Scanning physical screens across real camera sensors validates true quality.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Project Highlights -->
+      <section class="about-highlights-section scroll-reveal">
+        <div class="highlights-metrics-grid">
+          <div class="highlight-metric-card">
+            <span class="metric-big-val">~1.5 Hours</span>
+            <span class="metric-big-lbl">Idea to Deployment</span>
+            <span class="metric-big-sub">Fast, focused product execution</span>
+          </div>
+          <div class="highlight-metric-card">
+            <span class="metric-big-val">AI-Assisted</span>
+            <span class="metric-big-lbl">Human-Directed</span>
+            <span class="metric-big-sub">Reviewed &amp; guided at every phase</span>
+          </div>
+          <div class="highlight-metric-card">
+            <span class="metric-big-val">100% Free</span>
+            <span class="metric-big-lbl">No Expiration Limits</span>
+            <span class="metric-big-sub">No 7-day trials or hidden fees</span>
+          </div>
+          <div class="highlight-metric-card">
+            <span class="metric-big-val">Production Deployed</span>
+            <span class="metric-big-lbl">Firebase Hosting</span>
+            <span class="metric-big-sub">Live &amp; globally distributed</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Developer Note -->
+      <section class="about-closing-section scroll-reveal">
+        <div class="about-closing-card">
+          <div class="developer-note-text">
+            “OmniQR Studio started with a simple problem and became an experiment in how far a developer can go by combining creativity, technical knowledge, and modern AI tools.”
+          </div>
+          <div class="closing-author-row">
+            <div class="closing-avatar">RN</div>
+            <div class="closing-author-info">
+              <span class="closing-author-name">Rahul Nag V</span>
+              <span class="closing-author-title">Computer Science Engineering Student &amp; Developer</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Final CTA -->
+      <section class="about-cta-section scroll-reveal">
+        <div class="about-cta-card">
+          <span class="section-label-tag">Experience OmniQR Studio</span>
+          <h2 class="about-cta-title">Ready to create your custom QR code?</h2>
+          <p class="about-cta-subtext">Free forever for everyone — no expiration dates, no watermarks, and no sign-up needed.</p>
+          <div class="about-cta-buttons">
+            <a href="#/generator" class="btn-hero-primary">
+              <span>Try OmniQR Studio →</span>
+            </a>
+            <a href="https://github.com/RahulNag-V/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
   <!-- Professional Footer -->
-  <footer class="site-footer" id="about">
+  <footer class="site-footer">
     <div class="footer-inner-grid">
       <div class="footer-brand-side">
         <span class="footer-brand-title">OMNIQR</span>
@@ -1184,14 +1701,15 @@
       </div>
 
       <ul class="footer-nav-list">
-        <li><a href="#/" class="footer-nav-link">Home</a></li>
-        <li><a href="#/generator" class="footer-nav-link">QR Generator</a></li>
-        <li><a href="#templates" class="footer-nav-link">Templates</a></li>
+        <li><a href="#/" class="footer-nav-link" data-nav="home">Home</a></li>
+        <li><a href="#/generator" class="footer-nav-link" data-nav="generator">QR Generator</a></li>
+        <li><a href="#templates" class="footer-nav-link" data-nav="templates">Templates</a></li>
+        <li><a href="#/about" class="footer-nav-link" data-nav="about">About</a></li>
         <li><a href="https://github.com/RahulNag-V" target="_blank" rel="noopener noreferrer" class="footer-nav-link">GitHub</a></li>
       </ul>
 
       <div class="footer-credits">
-        <span>Built with precision by Rahul Nag &bull; 2026</span>
+        <span>Designed &amp; built by Rahul Nag V &bull; 2026</span>
       </div>
     </div>
   </footer>
