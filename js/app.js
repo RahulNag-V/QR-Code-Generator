@@ -621,12 +621,35 @@
         }
 
         // Auto-refresh based on panel state
-        if (selectedType === 'wifi') {
+        if (selectedType === 'url') {
+          state.url = normalizeUrl(el.urlInput.value);
+          refreshQRCode();
+        } else if (selectedType === 'wifi') {
           syncWifiState();
         } else if (selectedType === 'vcard') {
           syncVcardState();
         } else if (selectedType === 'text') {
           syncTextState();
+        } else if (selectedType === 'image') {
+          if (state.imageQrUrl) {
+            state.url = state.imageQrUrl;
+            refreshQRCode();
+          }
+        } else if (selectedType === 'video') {
+          if (state.videoQrUrl) {
+            state.url = state.videoQrUrl;
+            refreshQRCode();
+          }
+        } else if (selectedType === 'audio') {
+          if (state.audioQrUrl) {
+            state.url = state.audioQrUrl;
+            refreshQRCode();
+          }
+        } else if (selectedType === 'file') {
+          if (state.docQrUrl) {
+            state.url = state.docQrUrl;
+            refreshQRCode();
+          }
         }
       });
     });
@@ -1369,7 +1392,7 @@
     });
 
     // Download & Actions (Live Preview)
-    if (el.downloadPngBtn) el.downloadPngBtn.addEventListener('click', () => downloadQR('png'));
+    if (el.downloadPngBtn) el.downloadPngBtn.addEventListener('click', () => downloadQR(state.selectedExportFormat || 'png'));
     if (el.downloadSvgBtn) el.downloadSvgBtn.addEventListener('click', () => downloadQR('svg'));
     if (el.downloadJpegBtn) el.downloadJpegBtn.addEventListener('click', () => downloadQR('jpeg'));
     if (el.copyQrBtn) el.copyQrBtn.addEventListener('click', copyQrImageToClipboard);
@@ -1684,7 +1707,11 @@
           setTimeout(() => {
             initQRCode();
             renderHistory();
-          }, 50);
+          }, 30);
+        } else {
+          setTimeout(() => {
+            refreshQRCode();
+          }, 30);
         }
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -1912,13 +1939,6 @@
       });
     });
 
-    // Override download PNG button to use selected format
-    if (downloadBtn) {
-      downloadBtn.removeEventListener('click', () => downloadQR('png'));
-      downloadBtn.addEventListener('click', () => {
-        downloadQR(state.selectedExportFormat === 'svg' ? 'svg' : state.selectedExportFormat === 'jpeg' ? 'jpeg' : 'png');
-      });
-    }
   }
 
   // ===================================================================

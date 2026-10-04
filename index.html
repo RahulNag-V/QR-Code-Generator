@@ -568,11 +568,8 @@
       <!-- Main Two-Column Workspace -->
       <div class="generator-workspace-grid">
 
-        <!-- LEFT COLUMN: Content Type Selector + Input + Accordion Customization -->
-        <div class="generator-left-panel">
-
-          <!-- 1. QR Type Selector Visual Cards -->
-          <div class="type-selector-card-block">
+        <!-- 1. QR Type Selector Visual Cards -->
+        <div class="type-selector-card-block">
             <div class="type-selector-header">Select Content Type</div>
             <nav class="type-buttons-visual-grid" role="tablist" aria-label="QR Code Content Types">
               <button class="type-nav-btn active" data-type="url" type="button" role="tab" aria-selected="true">
@@ -826,15 +823,92 @@
             </div>
           </div>
 
-          <!-- 3. PROGRESSIVE DISCLOSURE ACCORDIONS -->
+          <!-- 3. LIVE PREVIEW CARD (Directly below content input on mobile, sticky right on desktop) -->
+          <div class="live-preview-card">
+            <div class="preview-header-bar">
+              <span class="preview-title-badge">Live Preview</span>
+              <div class="preview-live-indicator">
+                <span class="live-pulse-dot"></span>
+                <span>Live Synced</span>
+              </div>
+            </div>
+
+            <!-- QR Code Canvas Container -->
+            <div class="qr-stage-wrapper">
+              <div id="qrCodeContainer" class="qr-canvas-holder">
+                <!-- Dynamically rendered QR Canvas -->
+              </div>
+            </div>
+
+            <!-- Scan Quality Dynamic Pill -->
+            <div class="scan-quality-container">
+              <div id="scanQualityPill" class="scan-quality-pill quality-excellent">
+                <span style="display: flex; align-items: center; gap: 0.35rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Scan Quality:</span>
+                </span>
+                <span id="scanQualityRating">Excellent</span>
+              </div>
+              <span id="scanQualityFeedback" class="scan-quality-msg">High contrast, optimal error correction, clean scan profile.</span>
+            </div>
+
+            <!-- Content Payload Readout -->
+            <div class="payload-readout-row">
+              <span id="qrUrlReadout" class="payload-readout-text">https://antigravity.google/</span>
+              <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" id="testScannerLink" class="payload-test-link" title="Test destination URL">Test Link ↗</a>
+            </div>
+
+            <!-- Export Formats & Resolution -->
+            <div class="export-controls-block">
+              <div class="format-pills-row">
+                <button type="button" class="format-pill-btn active" data-format="png" id="btnFormatPng">PNG</button>
+                <button type="button" class="format-pill-btn" data-format="svg" id="btnFormatSvg">SVG</button>
+                <button type="button" class="format-pill-btn" data-format="jpeg" id="btnFormatJpg">JPG</button>
+              </div>
+
+              <div class="resolution-dropdown-row">
+                <select id="exportSizeSelect" class="form-select-input" style="width: 100%;">
+                  <option value="320">Standard Web (320 × 320 px)</option>
+                  <option value="600" selected>High Resolution (600 × 600 px)</option>
+                  <option value="1200">Ultra Print HD (1200 × 1200 px)</option>
+                  <option value="2000">Billboard 4K (2000 × 2000 px)</option>
+                </select>
+              </div>
+
+              <!-- Primary Download Button -->
+              <button id="downloadPngBtn" class="btn-download-primary" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span id="mainDownloadBtnText">Download QR Code</span>
+              </button>
+
+              <!-- Secondary Actions -->
+              <div class="secondary-actions-row">
+                <button id="copyQrBtn" class="btn-action-alt" type="button">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <span>Copy Image</span>
+                </button>
+                <button id="printQrBtn" class="btn-action-alt" type="button">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                  <span>Print</span>
+                </button>
+              </div>
+
+              <!-- Hidden export triggers for backward compatibility -->
+              <button id="downloadSvgBtn" style="display:none;" type="button">SVG</button>
+              <button id="downloadJpegBtn" style="display:none;" type="button">JPEG</button>
+              <button id="copyReadoutBtn" style="display:none;" type="button">Copy URL</button>
+            </div>
+          </div>
+
+          <!-- 4. PROGRESSIVE DISCLOSURE ACCORDIONS -->
           <div class="customization-section-block">
             <div class="customization-section-title">Customize Appearance</div>
 
             <div class="accordion-group">
 
               <!-- ACCORDION 1: COLORS -->
-              <div class="accordion-item open" id="accColors">
-                <button class="accordion-trigger" type="button" aria-expanded="true">
+              <div class="accordion-item" id="accColors">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
                   <div class="accordion-trigger-left">
                     <div class="accordion-icon-box">🎨</div>
                     <span>Colors & Gradients</span>
@@ -842,7 +916,7 @@
                   <svg class="accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </button>
                 <div class="accordion-panel">
-                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
                     <span style="font-size: 0.82rem; font-weight: 600; color: var(--foreground-muted);">Pattern Fill</span>
                     <div style="display: flex; gap: 0.75rem; font-size: 0.8rem;">
                       <label style="cursor: pointer; display: flex; align-items: center; gap: 0.35rem;">
@@ -1202,102 +1276,19 @@
             </div>
           </div>
 
+        <!-- 5. History Section -->
+        <div class="history-card" id="historyCard">
+          <div class="history-header">
+            <span class="history-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Recent History</span>
+            </span>
+            <button id="clearHistoryBtn" class="btn-input-action" type="button">Clear</button>
+          </div>
+          <div id="historyList" class="history-list">
+            <!-- Dynamically populated from localStorage -->
+          </div>
         </div>
-
-        <!-- RIGHT COLUMN: Sticky Live Preview + Scan Quality + Export -->
-        <aside class="generator-right-panel">
-
-          <div class="live-preview-card">
-            <div class="preview-header-bar">
-              <span class="preview-title-badge">Live Preview</span>
-              <div class="preview-live-indicator">
-                <span class="live-pulse-dot"></span>
-                <span>Live Synced</span>
-              </div>
-            </div>
-
-            <!-- QR Code Canvas Container -->
-            <div class="qr-stage-wrapper">
-              <div id="qrCodeContainer" class="qr-canvas-holder">
-                <!-- Dynamically rendered QR Canvas -->
-              </div>
-            </div>
-
-            <!-- Scan Quality Dynamic Pill -->
-            <div class="scan-quality-container">
-              <div id="scanQualityPill" class="scan-quality-pill quality-excellent">
-                <span style="display: flex; align-items: center; gap: 0.35rem;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Scan Quality:</span>
-                </span>
-                <span id="scanQualityRating">Excellent</span>
-              </div>
-              <span id="scanQualityFeedback" class="scan-quality-msg">High contrast, optimal error correction, clean scan profile.</span>
-            </div>
-
-            <!-- Content Payload Readout -->
-            <div class="payload-readout-row">
-              <span id="qrUrlReadout" class="payload-readout-text">https://antigravity.google/</span>
-              <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" id="testScannerLink" class="payload-test-link" title="Test destination URL">Test Link ↗</a>
-            </div>
-
-            <!-- Export Formats & Resolution -->
-            <div class="export-controls-block">
-              <div class="format-pills-row">
-                <button type="button" class="format-pill-btn active" data-format="png" id="btnFormatPng">PNG</button>
-                <button type="button" class="format-pill-btn" data-format="svg" id="btnFormatSvg">SVG</button>
-                <button type="button" class="format-pill-btn" data-format="jpeg" id="btnFormatJpg">JPG</button>
-              </div>
-
-              <div class="resolution-dropdown-row">
-                <select id="exportSizeSelect" class="form-select-input" style="width: 100%;">
-                  <option value="320">Standard Web (320 × 320 px)</option>
-                  <option value="600" selected>High Resolution (600 × 600 px)</option>
-                  <option value="1200">Ultra Print HD (1200 × 1200 px)</option>
-                  <option value="2000">Billboard 4K (2000 × 2000 px)</option>
-                </select>
-              </div>
-
-              <!-- Primary Download Button -->
-              <button id="downloadPngBtn" class="btn-download-primary" type="button">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span id="mainDownloadBtnText">Download QR Code</span>
-              </button>
-
-              <!-- Secondary Actions -->
-              <div class="secondary-actions-row">
-                <button id="copyQrBtn" class="btn-action-alt" type="button">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <span>Copy Image</span>
-                </button>
-                <button id="printQrBtn" class="btn-action-alt" type="button">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                  <span>Print</span>
-                </button>
-              </div>
-
-              <!-- Hidden export triggers for backward compatibility -->
-              <button id="downloadSvgBtn" style="display:none;" type="button">SVG</button>
-              <button id="downloadJpegBtn" style="display:none;" type="button">JPEG</button>
-              <button id="copyReadoutBtn" style="display:none;" type="button">Copy URL</button>
-            </div>
-          </div>
-
-          <!-- History Section -->
-          <div class="history-card" id="historyCard">
-            <div class="history-header">
-              <span class="history-title">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Recent History</span>
-              </span>
-              <button id="clearHistoryBtn" class="btn-input-action" type="button">Clear</button>
-            </div>
-            <div id="historyList" class="history-list">
-              <!-- Dynamically populated from localStorage -->
-            </div>
-          </div>
-
-        </aside>
 
       </div>
     </div>
