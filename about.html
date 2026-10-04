@@ -510,9 +510,33 @@
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileDrawer = document.getElementById('mobileDrawer');
     if (mobileBtn && mobileDrawer) {
-      mobileBtn.addEventListener('click', () => {
+      function closeDrawer() {
+        mobileDrawer.classList.remove('open');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const isOpen = mobileDrawer.classList.toggle('open');
         mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
+        mobileBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
+          closeDrawer();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+          closeDrawer();
+        }
       });
     }
 

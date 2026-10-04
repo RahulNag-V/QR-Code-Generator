@@ -1929,11 +1929,33 @@
     const drawer = document.getElementById('mobileDrawer');
     if (!toggleBtn || !drawer) return;
 
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = drawer.classList.contains('open');
       drawer.classList.toggle('open', !isOpen);
-      drawer.setAttribute('aria-hidden', isOpen);
-      toggleBtn.setAttribute('aria-expanded', !isOpen);
+      drawer.setAttribute('aria-hidden', String(isOpen));
+      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close when clicking any link inside drawer
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileDrawer();
+      });
+    });
+
+    // Close when clicking outside drawer
+    document.addEventListener('click', (e) => {
+      if (drawer.classList.contains('open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeMobileDrawer();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeMobileDrawer();
+      }
     });
   }
 
